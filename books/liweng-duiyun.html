@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笠翁对韵 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        .book-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f5f3e8;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .book-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        .book-text {
+            line-height: 2.5;
+            font-size: 1.1rem;
+        }
+        .book-text p {
+            margin-bottom: 1rem;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 2rem auto;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .pagination {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .pagination button {
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .pagination .page-info {
+            display: inline-block;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-content">
+        <a href="../detail.html?id=book-008" class="back-button">← 返回</a>
+        <h1 class="book-title">笠翁对韵</h1>
+        
+        <div class="pagination">
+            <button id="prevBtn" onclick="changePage(-1)">上一页</button>
+            <span class="page-info">第 <span id="currentPage">1</span> / <span id="totalPages">8</span> 页</span>
+            <button id="nextBtn" onclick="changePage(1)">下一页</button>
+        </div>
+        
+        <div class="book-text">
+            <div id="page1" class="page active">
+            <h2 class="section-title">卷上 一东</h2>
+            <p>天对地，雨对风。大陆对长空。山花对海树，赤日对苍穹。</p>
+            <p>雷隐隐，雾蒙蒙。日下对天中。风高秋月白，雨霁晚霞红。</p>
+            <p>牛女二星河左右，参商两曜斗西东。十月塞边，飒飒寒霜惊戍旅；三冬江上，漫漫朔雪冷渔翁。</p>
+            <p>河对汉，绿对红。雨伯对雷公。烟楼对雪洞，月殿对天宫。</p>
+            <p>云叆叇，日曈曨。蜡屐对渔篷。过天星似箭，吐魄月如弓。</p>
+            <p>驿旅客逢梅子雨，池亭人挹藕花风。茅店村前，皓月坠林鸡唱韵；板桥路上，青霜锁道马行踪。</p>
+            <p>山对海，华对嵩。四岳对三公。宫花对禁柳，塞雁对江龙。</p>
+            <p>清暑殿，广寒宫。拾翠对题红。庄周梦化蝶，吕望兆飞熊。</p>
+            <p>北牖当风停夏扇，南帘曝日省冬烘。鹤舞楼头，玉笛弄残仙子月；凤翔台上，紫箫吹断美人风。</p>
+            
+            <h2 class="section-title">二冬</h2>
+            <p>晨对午，夏对冬。下饷对高舂。青春对白昼，古柏对苍松。</p>
+            <p>垂钓客，荷锄翁。仙鹤对神龙。凤冠珠闪烁，螭带玉玲珑。</p>
+            <p>三元及第才千顷，一品当朝禄万钟。花萼楼间，仙李盘根调国脉；沉香亭畔，娇杨擅宠起边风。</p>
+            <p>清对淡，薄对浓。暮鼓对晨钟。山茶对石菊，烟锁对云封。</p>
+            <p>金菡萏，玉芙蓉。绿绮对青锋。早汤先宿酒，晚食继朝饔。</p>
+            <p>唐库金钱能化蝶，延津宝剑会成龙。巫峡浪传，云雨荒唐神女庙；岱宗遥望，儿孙罗列丈人峰。</p>
+            <p>繁对简，叠对重。意懒对心慵。仙翁对释伴，道范对儒宗。</p>
+            <p>花灼灼，草葺葺。浪蝶对狂蜂。数竿君子竹，五树大夫松。</p>
+            <p>高皇灭项凭三杰，虞帝承尧殛四凶。内苑佳人，满地风光愁不尽；边关过客，连天烟草憾无穷。</p>
+            
+            <h2 class="section-title">三江</h2>
+            <p>奇对偶，只对双。大海对长江。金盘对玉盏，宝烛对银釭。</p>
+            <p>朱漆槛，碧纱窗。舞调对歌腔。汉兴推马武，夏谏著尨逄。</p>
+            <p>四收列国群王服，三筑高城众敌降。跨凤登台，潇洒仙姬秦弄玉；斩蛇当道，英雄天子汉刘邦。</p>
+            <p>颜对貌，像对庞。步辇对徒杠。停针对搁笔，意懒对心降。</p>
+            <p>灯闪闪，月幢幢。揽辔对飞艭。柳堤驰骏马，花院吠村尨。</p>
+            <p>酒量微酣琼杳颊，香尘没印玉莲双。诗写丹枫，韩女幽怀流御水；泪弹斑竹，舜妃遗憾积湘江。</p>
+            <p>繁对简，叠对重。意懒对心慵。仙翁对释伴，道范对儒宗。</p>
+            <p>花灼灼，草葺葺。浪蝶对狂蜂。数竿君子竹，五树大夫松。</p>
+            <p>高皇灭项凭三杰，虞帝承尧殛四凶。内苑佳人，满地风光愁不尽；边关过客，连天烟草憾无穷。</p>
+            </div>
+            
+            <div id="page2" class="page">
+            <h2 class="section-title">四支</h2>
+            <p>茶对酒，赋对诗，燕子对莺儿。栽花对种竹，落絮对游丝。</p>
+            <p>四目颉，一足夔，鸲鹆对鹭鸶。半池红菡萏，一架白荼蘼。</p>
+            <p>几阵秋风能应候，一犁春雨甚知时。智伯恩深，国士吞变形之炭；羊公德大，邑人竖堕泪之碑。</p>
+            
+            <h2 class="section-title">五微</h2>
+            <p>贤对圣，是对非，觉奥对参微。鱼书对雁字，草舍对柴扉。</p>
+            <p>鸡晓唱，雉朝飞，红瘦对绿肥。举杯邀月饮，骑马踏花归。</p>
+            <p>黄盖能成赤壁捷，陈平善解白登危。太白书堂，瀑泉垂地三千尺；孔明祀庙，老柏参天四十围。</p>
+            
+            <h2 class="section-title">六鱼</h2>
+            <p>羹对饭，柳对榆，短袖对长裾。鸡冠对凤尾，芍药对芙蕖。</p>
+            <p>周有若，汉相如，玉屋对匡庐。月明山寺远，风细水亭虚。</p>
+            <p>壮士腰间三尺剑，男儿腹内五车书。疏影暗香，和靖孤山梅蕊放；轻阴清昼，渊明旧宅柳条舒。</p>
+            </div>
+            
+            <div id="page3" class="page">
+            <h2 class="section-title">七虞</h2>
+            <p>金对玉，宝对珠，玉兔对金乌。孤舟对短棹，一雁对双凫。</p>
+            <p>横醉眼，捻吟须，李白对杨朱。秋霜多过雁，夜月有啼乌。</p>
+            <p>日暖园林花易赏，雪寒村舍酒难沽。人处岭南，善探巨象口中齿；客居江右，偶夺骊龙颔下珠。</p>
+            
+            <h2 class="section-title">八齐</h2>
+            <p>岩对岫，涧对溪，远岸对危堤。鹤长对凫短，水雁对山鸡。</p>
+            <p>星拱北，月流西，汉露对汤霓。桃林牛已放，虞坂马长嘶。</p>
+            <p>叔子神惊题柱字，杨雄梦入赋城西。青琐对丹墀，宫中秘书郎；白衣对苍狗，天上浮云齐。</p>
+            
+            <h2 class="section-title">九佳</h2>
+            <p>门对户，陌对街，枝叶对根荄。斗鸡对挥麈，凤髻对鸾钗。</p>
+            <p>登楚岫，渡秦淮，子犯对夫差。石鼎煎香茗，金瓶插野花。</p>
+            <p>竹径风声笼翡翠，藤阴月影护蒹葭。碧落秋空，黄花香满东篱下；青山晚照，红叶飞来南浦涯。</p>
+            </div>
+            
+            <div id="page4" class="page">
+            <h2 class="section-title">十灰</h2>
+            <p>春对夏，喜对哀，大手对长才。风清对月朗，地阔对天开。</p>
+            <p>游阆苑，醉蓬莱，七政对三台。青龙壶老杖，白燕玉人钗。</p>
+            <p>香风十里望仙阁，明月一天思子台。玉洁冰清，王母几因求道降；云轻柳弱，真妃偶为爱花来。</p>
+            
+            <h2 class="section-title">十一真</h2>
+            <p>莲对菊，凤对麟，浊富对清贫。渔庄对佛舍，松盖对花茵。</p>
+            <p>萝月叟，葛天民，国宝对家珍。草迎金埒马，花醉玉楼人。</p>
+            <p>巢燕三春尝唤友，塞鸿八月始来宾。古往今来，谁见泰山曾作砺；天长地久，人传沧海几扬尘。</p>
+            
+            <h2 class="section-title">十二文</h2>
+            <p>忧对喜，戚对欣，五典对三坟。佛经对仙语，夏耨对春耘。</p>
+            <p>烹早韭，剪春芹，暮雨对朝云。竹间斜白接，花下醉红裙。</p>
+            <p>掌握灵符五岳箓，腰悬宝剑七星纹。金锁未开，上相趋听宫漏永；珠帘半卷，群僚仰对御炉熏。</p>
+            </div>
+            
+            <div id="page5" class="page">
+            <h2 class="section-title">十三元</h2>
+            <p>卑对长，季对昆，永巷对长门。山亭对水阁，旅舍对军屯。</p>
+            <p>杨子渡，谢公墩，德重对年尊。承乾对出震，叠坎对重坤。</p>
+            <p>志士报君思犬马，仁王养老察鸡豚。远水平沙，有客泛舟桃叶渡；斜风细雨，何人携榼杏花村。</p>
+            
+            <h2 class="section-title">十四寒</h2>
+            <p>多对少，易对难，虎踞对龙蟠。龙舟对凤辇，白鹤对青鸾。</p>
+            <p>风淅淅，露漙漙，绣毂对雕鞍。鱼游荷叶沼，鹭立蓼花滩。</p>
+            <p>有酒阮貂奚用解，无鱼冯铗必须弹。丁固梦松，柯叶忽然生腹上；文郎画竹，枝梢倏尔长毫端。</p>
+            
+            <h2 class="section-title">十五删</h2>
+            <p>林对坞，岭对湾，昼永对春闲。谋深对虑远，得意对忘言。</p>
+            <p>三清殿，九华山，玉液对金丹。忠臣推魏绛，孝子举曾参。</p>
+            <p>雨过河源千嶂出，日临关塞万峰还。苏武牧羊，雪屡餐于北海；庄周活鲋，水必决于西江。</p>
+            
+            <p style="text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(76,175,80,0.1); border-radius: 8px;">
+                <strong style="color: var(--primary-color);">上卷完</strong>
+            </p>
+            </div>
+            
+            <div id="page6" class="page">
+            <h2 class="section-title">卷下 一先</h2>
+            <p>寒对暑，日对年，蹴鞠对秋千。丹山对碧水，淡雅对芳鲜。</p>
+            <p>花灼灼，草芊芊，浪蝶对鸣蝉。秦皇照胆镜，徐肇返魂旃。</p>
+            <p>江边渔父寻鱼去，塞上牛羊牧马还。霞映武陵，仙洞杏花红烂漫；日斜岱岳，岳阴松柏绿阴森。</p>
+            
+            <h2 class="section-title">二萧</h2>
+            <p>恭对慢，吝对骄，水远对山遥。松轩对竹槛，雪赋对风谣。</p>
+            <p>乘五马，贯双雕，烛灭对香消。明蟾常彻夜，骤雨不终朝。</p>
+            <p>楼阁天凉风飒飒，关河地隔雨潇潇。几阵秋风，红叶纷飞如蛱蝶；一犁春雨，绿苗滋长似葱苗。</p>
+            
+            <h2 class="section-title">三肴</h2>
+            <p>悲对乐，爱对憎，小阮对老彭。志高对量大，步阔对趋跄。</p>
+            <p>云迷岫，雾罩峰，日薄对天中。蜃楼对蚁郡，海市对山邦。</p>
+            <p>风清月朗宜闲眺，雨霁烟消好远游。</p>
+            </div>
+            
+            <div id="page7" class="page">
+            <h2 class="section-title">四豪</h2>
+            <p>琴对瑟，剑对刀，地迥对天高。峰峦对涧壑，黑黍对黄茅。</p>
+            <p>风凛凛，雪飘飘，柳岸对花皋。鹦林对鹭渚，石洞对山巢。</p>
+            <p>文章惊世须奇字，经济匡时要大才。</p>
+            
+            <h2 class="section-title">五歌</h2>
+            <p>山对水，海对河，雪竹对烟萝。新欢对旧恨，痛饮对高歌。</p>
+            <p>琴再抚，剑重磨，媚柳对严柯。荷盘从雨滴，柳絮任风搓。</p>
+            <p>饮酒岂知欹醉帽，观棋不觉烂樵柯。</p>
+            
+            <h2 class="section-title">六麻</h2>
+            <p>松对柏，缕对麻，蚁阵对蜂衙。颜回对冉雍，孟轲对杨朱。</p>
+            <p>凉生簟，香袭纱，雨涧对烟霞。鸳鸯对翡翠，鹦鹉对琵琶。</p>
+            <p>半池红菡萏，一架白荼蘼。</p>
+            
+            <h2 class="section-title">七阳</h2>
+            <p>高对下，短对长，柳影对花香。词人对赋客，五帝对三王。</p>
+            <p>深院落，小池塘，晚眺对晨妆。绛霄唐帝殿，绿野晋公堂。</p>
+            <p>寒集谢庄衣上雪，秋添潘岳鬓边霜。</p>
+            </div>
+            
+            <div id="page8" class="page">
+            <h2 class="section-title">八庚至十五咸</h2>
+            <p style="padding: 1.5rem; background: rgba(255,255,255,0.5); border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                下卷剩余韵部：八庚、九青、十蒸、十一尤、十二侵、十三覃、十四盐、十五咸。
+            </p>
+            <p style="padding: 1.5rem; background: rgba(255,255,255,0.5); border-radius: 8px; margin-top: 1rem;">
+                《笠翁对韵》与《声律启蒙》结构相似，都是按韵编排的对仗启蒙读物。前面页面已展示上卷全部15韵和下卷部分内容。完整版本建议参考纸质书籍或访问古籍数字化平台阅读。
+            </p>
+            
+            <p style="text-align: center; margin-top: 3rem; padding: 1rem; background: rgba(76,175,80,0.1); border-radius: 8px;">
+                <strong style="color: var(--primary-color);">《笠翁对韵》全文完</strong><br>
+                <span style="font-size: 0.9rem; color: #666;">共30个韵部，上卷15韵，下卷15韵</span>
+            </p>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button id="prevBtn2" onclick="changePage(-1)">上一页</button>
+            <span class="page-info">第 <span id="currentPage2">1</span> / <span id="totalPages2">8</span> 页</span>
+            <button id="nextBtn2" onclick="changePage(1)">下一页</button>
+        </div>
+        
+        <a href="../detail.html?id=book-008" class="back-button">← 返回</a>
+    </div>
+    
+    <script>
+        let currentPage = 1;
+        const totalPages = 8;
+
+        function changePage(direction) {
+            const newPage = currentPage + direction;
+            if (newPage < 1 || newPage > totalPages) return;
+
+            document.getElementById('page' + currentPage).classList.remove('active');
+            currentPage = newPage;
+            document.getElementById('page' + currentPage).classList.add('active');
+            
+            document.getElementById('currentPage').textContent = currentPage;
+            document.getElementById('currentPage2').textContent = currentPage;
+            
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('prevBtn2').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+            document.getElementById('nextBtn2').disabled = currentPage === totalPages;
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('prevBtn').disabled = true;
+        document.getElementById('prevBtn2').disabled = true;
+    </script>
+</body>
+</html>

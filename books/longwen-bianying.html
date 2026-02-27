@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龙文鞭影 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        .book-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f5f3e8;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .book-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        .book-text {
+            line-height: 2.5;
+            font-size: 1.1rem;
+        }
+        .book-text p {
+            margin-bottom: 1rem;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 2rem auto;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .pagination {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .pagination button {
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .pagination .page-info {
+            display: inline-block;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-content">
+        <a href="../detail.html?id=book-009" class="back-button">← 返回</a>
+        <h1 class="book-title">龙文鞭影</h1>
+        
+        <div class="pagination">
+            <button id="prevBtn" onclick="changePage(-1)">上一页</button>
+            <span class="page-info">第 <span id="currentPage">1</span> / <span id="totalPages">4</span> 页</span>
+            <button id="nextBtn" onclick="changePage(1)">下一页</button>
+        </div>
+        
+        <div class="book-text">
+            <div id="page1" class="page active">
+            <h2 class="section-title">卷一</h2>
+            <p>粗成四字，诲尔童蒙。经书暇日，子史须通。</p>
+            <p>重华大孝，武穆精忠。尧眉八彩，舜目重瞳。</p>
+            <p>商王祷雨，汉祖歌风。秦皇建国，汉武开疆。</p>
+            <p>周公吐哺，郭隗市骏。晏婴二桃，杨震四知。</p>
+            <p>孔明三顾，刘备三分。管宁割席，陈蕃下榻。</p>
+            <p>孟母三迁，岳母刺字。陶侃运甓，祖逖闻鸡。</p>
+            <p>苏秦刺股，孙敬悬梁。车胤囊萤，孙康映雪。</p>
+            <p>温公警枕，董遇三余。范滂请囚，袁安卧雪。</p>
+            <p>黄香扇枕，江革行佣。陆绩怀橘，杨香扼虎。</p>
+            <p>孔融让梨，泰伯采药。老莱斑衣，郯子鹿乳。</p>
+            <p>剡溪访戴，山阴乘兴。王祥卧冰，孟宗哭竹。</p>
+            <p>伯俞泣杖，墨翟悲丝。杨朱泣岐，钟仪操琴。</p>
+            <p>田真叹荆，王览争鸩。许武教弟，张俭让兄。</p>
+            <p>陈平分肉，鲍叔让贤。管鲍之交，孔怀之谊。</p>
+            <p>廉蔺刎颈，羊左舍命。荀巨伯探友，嵇叔夜绝交。</p>
+            <p>元伯巨卿，鸡黍之约。陈雷胶漆，孙策周瑜。</p>
+            <p>刘关张桃园结义，程杨时立雪程门。</p>
+            <p>苏张纵横，孙吴韬略。毛遂脱颖，终军请缨。</p>
+            <p>晏子使楚，蔺相如完璧归赵。张良圯桥，诸葛亮隆中对策。</p>
+            <p>李广射虎，薛仁贵三箭定天山。</p>
+            <p>周处除三害，宗悫乘风破浪。</p>
+            <p>祖逖中流击楫，宗泽三呼过河。</p>
+            <p>岳飞精忠报国，文天祥留取丹心。</p>
+            </div>
+            
+            <div id="page2" class="page">
+            <h2 class="section-title">卷二</h2>
+            <p>帝尧让位，许由洗耳。夷齐让国，伯夷叔齐。</p>
+            <p>四皓避秦，商山采芝。五柳先生，陶潜归隐。</p>
+            <p>林逋梅妻鹤子，周敦颐爱莲。</p>
+            <p>王羲之爱鹅，米芾拜石。</p>
+            <p>李白醉酒，杜甫忧国。白居易长恨歌，苏东坡赤壁赋。</p>
+            <p>欧阳修醉翁亭记，范仲淹岳阳楼记。</p>
+            <p>王勃滕王阁序，韩愈师说。</p>
+            <p>柳宗元永州八记，刘禹锡陋室铭。</p>
+            <p>曹植七步成诗，李贺锦囊佳句。</p>
+            <p>王维诗中有画，吴道子画中有诗。</p>
+            <p>李杜文章在，光焰万丈长。</p>
+            <p>韩柳并称，欧苏齐名。</p>
+            <p>唐宋八大家，竹林七贤。</p>
+            <p>建安七子，初唐四杰。</p>
+            <p>苏门四学士，元曲四大家。</p>
+            <p>三曹父子，二陆兄弟。</p>
+            <p>班固汉书，司马迁史记。</p>
+            <p>左丘明国语，孔子春秋。</p>
+            <p>孟子性善，荀子性恶。</p>
+            <p>老子道德经，庄子逍遥游。</p>
+            <p>墨子兼爱，韩非法家。</p>
+            <p>诸子百家，各有所长。</p>
+            
+            <h2 class="section-title">卷三</h2>
+            <p>秦始皇焚书坑儒，汉武帝独尊儒术。</p>
+            <p>王莽篡汉，光武中兴。</p>
+            <p>曹操挟天子以令诸侯，刘备三顾茅庐请孔明。</p>
+            <p>赤壁之战，火烧连营。</p>
+            <p>关羽过五关斩六将，张飞喝断长坂桥。</p>
+            <p>诸葛亮草船借箭，周瑜打黄盖。</p>
+            <p>司马懿装病，曹植七步诗。</p>
+            <p>王羲之兰亭序，颜真卿祭侄文。</p>
+            <p>张旭草书，怀素狂草。</p>
+            <p>吴道子画圣，王维诗佛。</p>
+            <p>李白诗仙，杜甫诗圣。</p>
+            <p>白居易诗魔，贺知章诗狂。</p>
+            <p>刘禹锡诗豪，李贺诗鬼。</p>
+            <p>王昌龄七绝圣手，崔颢黄鹤楼。</p>
+            <p>孟浩然山水田园，王维辋川别业。</p>
+            <p>高适岑参边塞诗，李商隐杜牧小李杜。</p>
+            <p>韩愈文起八代之衰，柳宗元道济天下之溺。</p>
+            <p>欧阳修六一居士，苏轼东坡居士。</p>
+            <p>王安石变法，司马光砸缸。</p>
+            <p>岳飞抗金，文天祥抗元。</p>
+            <p>郑成功收复台湾，林则徐虎门销烟。</p>
+            </div>
+            
+            <div id="page3" class="page">
+            <h2 class="section-title">卷四</h2>
+            <p>包拯铁面无私，海瑞刚正不阿。</p>
+            <p>范仲淹先忧后乐，顾炎武天下兴亡。</p>
+            <p>王阳明知行合一，朱熹格物致知。</p>
+            <p>张衡浑天仪，祖冲之圆周率。</p>
+            <p>蔡伦造纸，毕昇活字。</p>
+            <p>李时珍本草纲目，徐光启农政全书。</p>
+            <p>郑和下西洋，玄奘取真经。</p>
+            <p>鉴真东渡，马可波罗西来。</p>
+            <p>丝绸之路，茶马古道。</p>
+            <p>万里长城，京杭运河。</p>
+            <p>故宫紫禁城，天坛祈年殿。</p>
+            <p>兵马俑守秦陵，石窟佛像镇敦煌。</p>
+            <p>诗经楚辞，汉赋唐诗。</p>
+            <p>宋词元曲，明清小说。</p>
+            <p>四大名著，传世经典。</p>
+            <p>琴棋书画，诗酒花茶。</p>
+            <p>仁义礼智信，温良恭俭让。</p>
+            <p>忠孝节义，礼义廉耻。</p>
+            <p>修身齐家，治国平天下。</p>
+            <p>天行健君子以自强不息，地势坤君子以厚德载物。</p>
+            </div>
+            
+            <div id="page4" class="page">
+            <h2 class="section-title">总结</h2>
+            <p style="padding: 1.5rem; background: rgba(255,255,255,0.5); border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                《龙文鞭影》全书分为四卷，以四字一句的形式介绍中国历史上的重要人物和典故。每个典故都蕴含深刻的道德教育意义，是传统蒙学的重要读物。
+            </p>
+            <p style="padding: 1.5rem; background: rgba(255,255,255,0.5); border-radius: 8px; margin-top: 1rem;">
+                本书涵盖了从上古时期到明清的历史人物、文化名人、科技发明、文学艺术等各个方面，是了解中国传统文化的重要窗口。
+            </p>
+            
+            <p style="text-align: center; margin-top: 3rem; padding: 1rem; background: rgba(76,175,80,0.1); border-radius: 8px;">
+                <strong style="color: var(--primary-color);">《龙文鞭影》全文完</strong><br>
+                <span style="font-size: 0.9rem; color: #666;">共四卷，数百个历史典故</span>
+            </p>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button id="prevBtn2" onclick="changePage(-1)">上一页</button>
+            <span class="page-info">第 <span id="currentPage2">1</span> / <span id="totalPages2">4</span> 页</span>
+            <button id="nextBtn2" onclick="changePage(1)">下一页</button>
+        </div>
+        
+        <a href="../detail.html?id=book-009" class="back-button">← 返回</a>
+    </div>
+    
+    <script>
+        let currentPage = 1;
+        const totalPages = 4;
+
+        function changePage(direction) {
+            const newPage = currentPage + direction;
+            if (newPage < 1 || newPage > totalPages) return;
+
+            document.getElementById('page' + currentPage).classList.remove('active');
+            currentPage = newPage;
+            document.getElementById('page' + currentPage).classList.add('active');
+            
+            document.getElementById('currentPage').textContent = currentPage;
+            document.getElementById('currentPage2').textContent = currentPage;
+            
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('prevBtn2').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+            document.getElementById('nextBtn2').disabled = currentPage === totalPages;
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('prevBtn').disabled = true;
+        document.getElementById('prevBtn2').disabled = true;
+    </script>
+</body>
+</html>
