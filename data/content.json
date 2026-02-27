@@ -74,7 +74,7 @@
       "title": "弟子规",
       "description": "儿童行为规范的启蒙读物",
       "detailedDescription": "《弟子规》是清代李毓秀编写的儿童启蒙读物，以《论语》学而篇为中心，讲述儿童在家、外出、待人接物、求学等方面的礼仪规范。全文360句，1080字，三字一句，朗朗上口。内容包括孝敬父母、尊敬师长、友爱兄弟、谨慎言行等，是培养儿童良好品德的经典教材。",
-      "cover": "https://via.placeholder.com/300x450/9C27B0/FFFFFF?text=弟子规",
+      "cover": "./images/covers/弟子规-封面图.jpeg",
       "ageRating": "6+",
       "metadata": {
         "author": "李毓秀",
@@ -96,7 +96,7 @@
       "title": "增广贤文",
       "description": "汇集历代格言谚语的启蒙读物",
       "detailedDescription": "《增广贤文》又名《昔时贤文》《古今贤文》，是中国古代儿童启蒙书目。书中汇集了历代格言、谚语，内容涉及为人处世、读书治学、修身养性等方面。语言通俗易懂，富含哲理，对儿童的道德教育和人生观培养具有重要意义。",
-      "cover": "https://via.placeholder.com/300x450/E91E63/FFFFFF?text=增广贤文",
+      "cover": "./images/covers/增广贤文-封面图.jpeg",
       "ageRating": "9+",
       "metadata": {
         "author": "佚名",
@@ -118,7 +118,7 @@
       "title": "幼学琼林",
       "description": "古代儿童的百科全书",
       "detailedDescription": "《幼学琼林》是明代程登吉编写的儿童启蒙读物，被誉为古代儿童的百科全书。内容包罗万象，涉及天文地理、人伦制度、婚丧嫁娶、花鸟鱼虫等各方面知识。全书采用对偶句式，便于记忆，是儿童了解传统文化和常识的重要读物。",
-      "cover": "https://via.placeholder.com/300x450/3F51B5/FFFFFF?text=幼学琼林",
+      "cover": "./images/covers/幼学琼林-封面图.jpeg",
       "ageRating": "9+",
       "metadata": {
         "author": "程登吉",
@@ -140,7 +140,7 @@
       "title": "声律启蒙",
       "description": "训练儿童诗词韵律的启蒙读物",
       "detailedDescription": "《声律启蒙》是清代车万育编写的训练儿童作诗对句、掌握声韵格律的启蒙读物。全书按韵分编，包罗天文、地理、花木、鸟兽、人物、器物等虚实应对。声韵协调，琅琅上口，是学习诗词格律的入门经典。",
-      "cover": "https://via.placeholder.com/300x450/009688/FFFFFF?text=声律启蒙",
+      "cover": "./images/covers/声律启蒙-封面图.jpeg",
       "ageRating": "9+",
       "metadata": {
         "author": "车万育",
@@ -162,7 +162,7 @@
       "title": "笠翁对韵",
       "description": "训练对仗和韵律的启蒙读物",
       "detailedDescription": "《笠翁对韵》是清代李渔编写的声韵启蒙读物，与《声律启蒙》齐名。全书按韵编排，内容更加丰富生动，涵盖天文、地理、花木、鸟兽、人物等。通过对偶句式的训练，帮助儿童掌握诗词格律，培养文学素养。",
-      "cover": "https://via.placeholder.com/300x450/FF5722/FFFFFF?text=笠翁对韵",
+      "cover": "./images/covers/笠翁对韵-封面图.jpeg",
       "ageRating": "9+",
       "metadata": {
         "author": "李渔",
@@ -184,7 +184,7 @@
       "title": "龙文鞭影",
       "description": "介绍历史人物和典故的启蒙读物",
       "detailedDescription": "《龙文鞭影》是明代萧良有编写的儿童启蒙读物，主要介绍中国历史上的重要人物和典故。全书四字一句，对仗工整，便于记忆。通过学习历史人物的事迹，培养儿童的历史知识和道德观念。",
-      "cover": "https://via.placeholder.com/300x450/795548/FFFFFF?text=龙文鞭影",
+      "cover": "./images/covers/龙文鞭影-封面图.jpeg",
       "ageRating": "9+",
       "metadata": {
         "author": "萧良有",
@@ -206,7 +206,7 @@
       "title": "名贤集",
       "description": "汇集古代名人名言的启蒙读物",
       "detailedDescription": "《名贤集》是中国古代儿童启蒙读物，汇集了历代名人的名言警句。内容涉及修身、齐家、治国、平天下等方面，语言简练，寓意深刻。通过学习先贤的智慧，培养儿童的道德品质和人生观。",
-      "cover": "https://via.placeholder.com/300x450/607D8B/FFFFFF?text=名贤集",
+      "cover": "./images/covers/名贤集-封面图.jpeg",
       "ageRating": "9+",
       "metadata": {
         "author": "佚名",
@@ -228,7 +228,7 @@
       "title": "神童诗",
       "description": "鼓励儿童勤奋读书的劝学诗集",
       "detailedDescription": "《神童诗》是宋代汪洙编写的劝学诗集，收录了多首鼓励儿童勤奋读书的诗歌。其中书中自有黄金屋、书中自有颜如玉等名句广为流传。全书语言浅显，寓意深刻，激励儿童树立远大志向，刻苦学习。",
-      "cover": "https://via.placeholder.com/300x450/FF9800/FFFFFF?text=神童诗",
+      "cover": "./images/covers/神童诗-封面图.jpeg",
       "ageRating": "6+",
       "metadata": {
         "author": "汪洙",
