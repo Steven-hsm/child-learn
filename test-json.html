@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>测试 JSON 加载</title>
+</head>
+<body>
+    <h1>JSON 加载测试</h1>
+    <div id="result"></div>
+    <div id="books"></div>
+
+    <script>
+        const resultDiv = document.getElementById('result');
+        const booksDiv = document.getElementById('books');
+
+        fetch('./data/content.json')
+            .then(response => {
+                console.log('Response status:', response.status);
+                if (!response.ok) {
+                    throw new Error('HTTP error ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data loaded:', data);
+                resultDiv.innerHTML = '<p style="color: green;">✓ JSON 加载成功！</p>';
+                resultDiv.innerHTML += '<p>总内容数: ' + data.content.length + '</p>';
+                
+                // 显示所有书籍
+                const books = data.content.filter(item => item.type === 'books');
+                booksDiv.innerHTML = '<h2>书籍列表 (' + books.length + ' 本)</h2>';
+                books.forEach(book => {
+                    booksDiv.innerHTML += '<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">';
+                    booksDiv.innerHTML += '<h3>' + book.title + '</h3>';
+                    booksDiv.innerHTML += '<p>ID: ' + book.id + '</p>';
+                    booksDiv.innerHTML += '<p>描述: ' + book.description + '</p>';
+                    booksDiv.innerHTML += '<p>年龄分级: ' + book.ageRating + '</p>';
+                    booksDiv.innerHTML += '</div>';
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultDiv.innerHTML = '<p style="color: red;">✗ 加载失败: ' + error.message + '</p>';
+            });
+    </script>
+</body>
+</html>

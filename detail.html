@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="内容详情">
+    <title>内容详情 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/themes.css">
+</head>
+<body>
+    <nav class="main-nav" role="navigation">
+        <div class="nav-container">
+            <a href="./" class="logo">青少年阅读平台</a>
+            <ul class="nav-menu">
+                <li><a href="./category.html?type=books">书籍</a></li>
+                <li><a href="./category.html?type=documentaries">纪录片</a></li>
+                <li><a href="./category.html?type=tv-series">电视剧</a></li>
+                <li><a href="./category.html?type=movies">电影</a></li>
+                <li><a href="./category.html?type=kids">少儿频道</a></li>
+                <li><a href="./about.html">关于</a></li>
+            </ul>
+            <div class="search-box">
+                <form action="./search.html" method="get">
+                    <input type="search" name="q" placeholder="搜索内容..." aria-label="搜索">
+                    <button type="submit" aria-label="提交搜索">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="back-button">
+            <button onclick="history.back()" aria-label="返回上一页" class="btn-back">← 返回</button>
+        </div>
+
+        <article id="content-detail" class="detail-container" role="main" aria-live="polite">
+            <!-- 内容详情将通过 JavaScript 动态加载 -->
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 青少年阅读平台. 为青少年提供安全、适龄的内容。</p>
+    </footer>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/dataLoader.js"></script>
+    <script src="./js/renderer.js"></script>
+    <script>
+        // 内容详情页逻辑
+        (async function initDetailPage() {
+            const container = document.getElementById('content-detail');
+            
+            if (!container) {
+                console.error('详情容器不存在');
+                return;
+            }
+            
+            try {
+                // 显示加载状态
+                renderer.renderLoading(container);
+                
+                // 从 URL 获取内容 ID
+                const params = parseQueryString(window.location.href);
+                const contentId = params.id;
+                
+                if (!contentId) {
+                    renderer.renderError(container, '缺少内容 ID 参数');
+                    return;
+                }
+                
+                // 加载内容数据
+                const content = await dataLoader.getContentById(contentId);
+                
+                if (!content) {
+                    renderer.renderError(container, '未找到该内容，可能已被删除或不存在');
+                    return;
+                }
+                
+                // 渲染内容详情
+                renderer.renderContentDetail(container, content);
+                
+                // 更新页面标题
+                document.title = `${content.title} - 青少年阅读平台`;
+                
+                // 为外部链接添加跳转提示
+                addExternalLinkWarning();
+                
+                // 启用图片懒加载
+                lazyLoadImages(container);
+                
+            } catch (error) {
+                console.error('加载内容详情失败:', error);
+                renderer.renderError(container, `加载失败: ${error.message}`);
+            }
+        })();
+        
+        /**
+         * 为外部链接添加跳转提示
+         */
+        function addExternalLinkWarning() {
+            const externalLinks = document.querySelectorAll('.detail-links a[target="_blank"]');
+            
+            externalLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                // 只对真正的外部链接（http/https 开头且不是相对路径）显示提示
+                if (href && (href.startsWith('http://') || href.startsWith('https://')) && !href.startsWith(window.location.origin)) {
+                    link.addEventListener('click', function(e) {
+                        const confirmed = confirm('您即将访问外部链接，请确保该链接安全可信。是否继续？');
+                        
+                        if (!confirmed) {
+                            e.preventDefault();
+                        }
+                    });
+                }
+            });
+        }
+        
+        // 初始化搜索框
+        initSearchBox();
+    </script>
+</body>
+</html>

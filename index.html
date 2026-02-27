@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专为青少年设计的多媒体内容平台，提供书籍、纪录片、电视剧、电影和少儿频道等优质内容">
+    <meta name="keywords" content="青少年阅读,书籍推荐,纪录片,电视剧,电影,少儿频道,适龄内容">
+    <title>首页 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/themes.css">
+</head>
+<body>
+    <!-- 跳转到主内容的无障碍链接 -->
+    <a href="#main-content" class="skip-to-content" aria-label="跳转到主内容">跳转到主内容</a>
+
+    <!-- 导航栏 -->
+    <header>
+        <nav class="main-nav" role="navigation" aria-label="主导航">
+            <div class="nav-container">
+                <a href="./" class="logo" aria-label="青少年阅读平台首页">青少年阅读平台</a>
+                
+                <ul class="nav-menu" role="menubar" aria-label="内容分类菜单">
+                    <li role="none">
+                        <a href="./category.html?type=books" role="menuitem" aria-label="浏览书籍分类">📚 书籍</a>
+                    </li>
+                    <li role="none">
+                        <a href="./category.html?type=documentaries" role="menuitem" aria-label="浏览纪录片分类">🎬 纪录片</a>
+                    </li>
+                    <li role="none">
+                        <a href="./category.html?type=tv-series" role="menuitem" aria-label="浏览电视剧分类">📺 电视剧</a>
+                    </li>
+                    <li role="none">
+                        <a href="./category.html?type=movies" role="menuitem" aria-label="浏览电影分类">🎥 电影</a>
+                    </li>
+                    <li role="none">
+                        <a href="./category.html?type=kids" role="menuitem" aria-label="浏览少儿频道分类">🎈 少儿频道</a>
+                    </li>
+                    <li role="none">
+                        <a href="./about.html" role="menuitem" aria-label="关于平台">关于</a>
+                    </li>
+                </ul>
+                
+                <div class="search-box" role="search">
+                    <form action="./search.html" method="get" aria-label="搜索表单">
+                        <label for="search-input" class="visually-hidden">搜索内容</label>
+                        <input 
+                            type="search" 
+                            id="search-input"
+                            name="q" 
+                            placeholder="搜索内容..." 
+                            aria-label="搜索内容"
+                            autocomplete="off">
+                        <button type="submit" aria-label="提交搜索">🔍</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main id="main-content" role="main">
+        <!-- Hero 横幅区域 -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">欢迎来到青少年阅读平台</h1>
+                <p>探索适合你的优质内容，培养良好的阅读习惯</p>
+            </div>
+        </section>
+
+        <!-- 精选推荐区域 -->
+        <section class="recommendations container" aria-labelledby="recommendations-title">
+            <h2 id="recommendations-title">✨ 精选推荐</h2>
+            <div 
+                id="recommended-content" 
+                class="content-grid" 
+                role="region" 
+                aria-label="推荐内容列表"
+                aria-live="polite"
+                aria-busy="true">
+                <!-- 推荐内容将通过 JavaScript 动态加载 -->
+                <div class="loading" role="status" aria-label="正在加载推荐内容">
+                    <div class="loading-spinner" aria-hidden="true"></div>
+                    <p class="loading-text">正在加载推荐内容...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 内容分类入口区域 -->
+        <section class="categories container" aria-labelledby="categories-title">
+            <h2 id="categories-title">📂 内容分类</h2>
+            <div 
+                id="category-list" 
+                class="category-grid" 
+                role="navigation" 
+                aria-label="内容分类导航"
+                aria-live="polite"
+                aria-busy="true">
+                <!-- 分类入口将通过 JavaScript 动态加载 -->
+                <div class="loading" role="status" aria-label="正在加载分类列表">
+                    <div class="loading-spinner" aria-hidden="true"></div>
+                    <p class="loading-text">正在加载分类...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2024 青少年阅读平台. 为青少年提供安全、适龄的内容。</p>
+            <p>
+                <a href="./about.html" aria-label="了解更多关于平台的信息">关于我们</a> | 
+                <a href="./about.html#age-ratings" aria-label="查看年龄分级说明">年龄分级说明</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript 模块 -->
+    <script src="./js/utils.js"></script>
+    <script src="./js/dataLoader.js"></script>
+    <script src="./js/renderer.js"></script>
+    <script src="./js/router.js"></script>
+    
+    <!-- 首页初始化脚本 -->
+    <script>
+        // 首页初始化逻辑
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // 初始化数据加载器
+                const dataLoader = new DataLoader();
+                const renderer = new Renderer();
+                
+                // 加载站点配置和内容数据
+                const [config, content] = await Promise.all([
+                    dataLoader.loadConfig(),
+                    dataLoader.loadContent()
+                ]);
+                
+                // 渲染推荐内容
+                await renderRecommendations(dataLoader, renderer);
+                
+                // 渲染分类入口
+                renderCategories(config, renderer);
+                
+                // 初始化搜索框交互
+                initSearchBox();
+                
+                // 初始化图片懒加载
+                if (typeof lazyLoadImages === 'function') {
+                    lazyLoadImages(document.body);
+                }
+            } catch (error) {
+                console.error('首页初始化失败:', error);
+                showError();
+            }
+        });
+        
+        // 渲染推荐内容
+        async function renderRecommendations(dataLoader, renderer) {
+            const container = document.getElementById('recommended-content');
+            container.setAttribute('aria-busy', 'false');
+            
+            try {
+                const recommendations = await dataLoader.loadRecommendations();
+                const content = await dataLoader.loadContent();
+                
+                if (recommendations && recommendations.length > 0) {
+                    // 获取推荐的内容项
+                    const recommendedItems = recommendations
+                        .map(rec => content.find(item => item.id === rec.contentId))
+                        .filter(item => item !== null && item !== undefined)
+                        .slice(0, 8); // 最多显示 8 个推荐
+                    
+                    if (recommendedItems.length > 0) {
+                        renderer.renderContentList(container, recommendedItems);
+                    } else {
+                        container.innerHTML = '<p class="empty-description">暂无推荐内容</p>';
+                    }
+                } else {
+                    // 如果没有推荐配置，显示最新的内容
+                    const latestItems = content.slice(0, 8);
+                    renderer.renderContentList(container, latestItems);
+                }
+            } catch (error) {
+                console.error('加载推荐内容失败:', error);
+                container.innerHTML = '<p class="error-description">加载推荐内容失败，请刷新页面重试</p>';
+            }
+        }
+        
+        // 渲染分类入口
+        function renderCategories(config, renderer) {
+            const container = document.getElementById('category-list');
+            container.setAttribute('aria-busy', 'false');
+            
+            try {
+                const contentTypes = config.contentTypes || [
+                    { id: 'books', name: '书籍', icon: '📚' },
+                    { id: 'documentaries', name: '纪录片', icon: '🎬' },
+                    { id: 'tv-series', name: '电视剧', icon: '📺' },
+                    { id: 'movies', name: '电影', icon: '🎥' },
+                    { id: 'kids', name: '少儿频道', icon: '🎈' }
+                ];
+                
+                container.innerHTML = contentTypes.map(type => `
+                    <a href="./category.html?type=${type.id}" 
+                       class="category-card" 
+                       role="link"
+                       aria-label="浏览${type.name}分类">
+                        <span class="category-icon" aria-hidden="true">${type.icon}</span>
+                        <span class="category-name">${type.name}</span>
+                    </a>
+                `).join('');
+            } catch (error) {
+                console.error('渲染分类入口失败:', error);
+                container.innerHTML = '<p class="error-description">加载分类失败，请刷新页面重试</p>';
+            }
+        }
+        
+        // 初始化搜索框交互
+        function initSearchBox() {
+            const searchForm = document.querySelector('.search-box form');
+            const searchInput = document.getElementById('search-input');
+            
+            if (!searchForm || !searchInput) return;
+            
+            // 防止提交空搜索
+            searchForm.addEventListener('submit', function(e) {
+                const keyword = searchInput.value.trim();
+                
+                if (!keyword) {
+                    e.preventDefault();
+                    searchInput.focus();
+                    
+                    // 添加视觉反馈
+                    searchInput.classList.add('error-shake');
+                    setTimeout(() => {
+                        searchInput.classList.remove('error-shake');
+                    }, 500);
+                    
+                    return false;
+                }
+            });
+            
+            // 输入时移除错误状态
+            searchInput.addEventListener('input', function() {
+                searchInput.classList.remove('error-shake');
+            });
+        }
+        
+        // 显示错误信息
+        function showError() {
+            const main = document.getElementById('main-content');
+            main.innerHTML = `
+                <div class="error-message container" role="alert">
+                    <span class="error-icon" aria-hidden="true">⚠️</span>
+                    <h2 class="error-title">加载失败</h2>
+                    <p class="error-description">抱歉，页面加载遇到问题。请检查网络连接后刷新页面重试。</p>
+                    <button class="btn btn-primary" onclick="location.reload()" aria-label="刷新页面">
+                        刷新页面
+                    </button>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

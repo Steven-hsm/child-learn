@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "recommendations": [
+    {
+      "contentId": "book-001",
+      "priority": 1,
+      "reason": "中国传统启蒙经典，学习传统文化"
+    },
+    {
+      "contentId": "book-002",
+      "priority": 2,
+      "reason": "了解中国姓氏文化，认识汉字"
+    },
+    {
+      "contentId": "book-003",
+      "priority": 3,
+      "reason": "一千个不重复汉字，识字启蒙佳作"
+    },
+    {
+      "contentId": "documentary-001",
+      "priority": 4,
+      "reason": "精美的自然纪录片，开拓视野"
+    },
+    {
+      "contentId": "movie-001",
+      "priority": 5,
+      "reason": "温暖感人的动画电影，适合全家观看"
+    },
+    {
+      "contentId": "tv-series-002",
+      "priority": 6,
+      "reason": "经典侦探推理剧，培养逻辑思维"
+    },
+    {
+      "contentId": "kids-002",
+      "priority": 7,
+      "reason": "勇敢的救援队故事，学习团队合作"
+    },
+    {
+      "contentId": "documentary-002",
+      "priority": 8,
+      "reason": "探索神秘海洋世界，了解海洋生态"
+    }
+  ]
+}

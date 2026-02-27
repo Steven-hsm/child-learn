@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "site": {
+    "title": "青少年阅读平台",
+    "description": "专为青少年设计的多媒体内容平台",
+    "baseUrl": "https://username.gitee.io/youth-reading-platform",
+    "language": "zh-CN"
+  },
+  "contentTypes": [
+    {
+      "id": "books",
+      "name": "书籍",
+      "icon": "📚"
+    },
+    {
+      "id": "documentaries",
+      "name": "纪录片",
+      "icon": "🎬"
+    },
+    {
+      "id": "tv-series",
+      "name": "电视剧",
+      "icon": "📺"
+    },
+    {
+      "id": "movies",
+      "name": "电影",
+      "icon": "🎥"
+    },
+    {
+      "id": "kids",
+      "name": "少儿频道",
+      "icon": "🎈"
+    }
+  ],
+  "ageRatings": [
+    {
+      "value": "6+",
+      "label": "6岁以上",
+      "color": "#4CAF50",
+      "description": "适合6岁及以上儿童"
+    },
+    {
+      "value": "9+",
+      "label": "9岁以上",
+      "color": "#2196F3",
+      "description": "适合9岁及以上儿童"
+    },
+    {
+      "value": "12+",
+      "label": "12岁以上",
+      "color": "#FF9800",
+      "description": "适合12岁及以上青少年"
+    },
+    {
+      "value": "15+",
+      "label": "15岁以上",
+      "color": "#F44336",
+      "description": "适合15岁及以上青少年"
+    }
+  ],
+  "performance": {
+    "imageLazyLoad": true,
+    "cacheEnabled": true,
+    "cacheDuration": 3600000
+  }
+}

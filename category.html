@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="浏览青少年阅读平台的分类内容，包括书籍、纪录片、电视剧、电影和少儿频道">
+    <meta name="keywords" content="青少年阅读,书籍,纪录片,电视剧,电影,少儿频道,适龄内容">
+    <meta name="author" content="青少年阅读平台">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>分类列表 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/themes.css">
+</head>
+<body>
+    <nav class="main-nav" role="navigation" aria-label="主导航">
+        <div class="nav-container">
+            <a href="./" class="logo" aria-label="青少年阅读平台首页">青少年阅读平台</a>
+            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav-toggle-icon"></span>
+            </button>
+            <ul id="nav-menu" class="nav-menu" role="menubar">
+                <li role="none"><a href="./category.html?type=books" role="menuitem">书籍</a></li>
+                <li role="none"><a href="./category.html?type=documentaries" role="menuitem">纪录片</a></li>
+                <li role="none"><a href="./category.html?type=tv-series" role="menuitem">电视剧</a></li>
+                <li role="none"><a href="./category.html?type=movies" role="menuitem">电影</a></li>
+                <li role="none"><a href="./category.html?type=kids" role="menuitem">少儿频道</a></li>
+                <li role="none"><a href="./about.html" role="menuitem">关于</a></li>
+            </ul>
+            <div class="search-box" role="search">
+                <form action="./search.html" method="get">
+                    <label for="search-input" class="visually-hidden">搜索内容</label>
+                    <input type="search" id="search-input" name="q" placeholder="搜索内容..." aria-label="搜索内容" required>
+                    <button type="submit" aria-label="提交搜索">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 跳转到主内容的链接（无障碍访问） -->
+    <a href="#main-content" class="skip-to-content">跳转到主内容</a>
+
+    <main id="main-content" role="main">
+        <section class="category-header" aria-labelledby="category-title">
+            <h1 id="category-title">内容列表</h1>
+            <p id="category-description" class="category-description"></p>
+        </section>
+
+        <section class="content-list" aria-label="内容列表">
+            <!-- 加载状态 -->
+            <div id="loading-indicator" class="loading-indicator" role="status" aria-live="polite" aria-label="正在加载内容">
+                <div class="spinner"></div>
+                <p>正在加载内容...</p>
+            </div>
+
+            <!-- 错误提示 -->
+            <div id="error-message" class="error-message" role="alert" aria-live="assertive" style="display: none;">
+                <p id="error-text"></p>
+                <button id="retry-button" class="btn-primary">重试</button>
+            </div>
+
+            <!-- 内容网格容器 -->
+            <div id="content-container" class="content-grid" role="list">
+                <!-- 内容列表将通过 JavaScript 动态加载 -->
+            </div>
+
+            <!-- 空状态提示 -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <p>该分类暂无内容</p>
+                <a href="./" class="btn-secondary">返回首页</a>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2024 青少年阅读平台. 为青少年提供安全、适龄的内容。</p>
+            <nav aria-label="页脚导航">
+                <ul class="footer-links">
+                    <li><a href="./about.html">关于我们</a></li>
+                    <li><a href="./about.html#age-ratings">年龄分级说明</a></li>
+                    <li><a href="./about.html#help">使用帮助</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/dataLoader.js"></script>
+    <script src="./js/renderer.js"></script>
+    <script src="./js/searchEngine.js"></script>
+    <script>
+        // 初始化搜索框
+        initSearchBox();
+
+        // 分类页面逻辑
+        (async function() {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const errorMessage = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+            const retryButton = document.getElementById('retry-button');
+            const contentContainer = document.getElementById('content-container');
+            const emptyState = document.getElementById('empty-state');
+            const categoryTitle = document.getElementById('category-title');
+            const categoryDescription = document.getElementById('category-description');
+
+            // 获取 URL 参数中的内容类型
+            const params = parseQueryString(window.location.search);
+            const contentType = params.type;
+
+            // 内容类型名称映射
+            const typeNames = {
+                'books': { name: '书籍', icon: '📚', description: '精选适合青少年的优质读物' },
+                'documentaries': { name: '纪录片', icon: '🎬', description: '开阔视野的纪实影像' },
+                'tv-series': { name: '电视剧', icon: '📺', description: '寓教于乐的影视作品' },
+                'movies': { name: '电影', icon: '🎥', description: '适龄的优质电影推荐' },
+                'kids': { name: '少儿频道', icon: '🎈', description: '专为低龄儿童设计的内容' }
+            };
+
+            // 加载和渲染内容
+            async function loadContent() {
+                try {
+                    // 显示加载状态
+                    loadingIndicator.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                    contentContainer.style.display = 'none';
+                    emptyState.style.display = 'none';
+
+                    // 验证内容类型
+                    if (!contentType || !typeNames[contentType]) {
+                        throw new Error('无效的内容类型');
+                    }
+
+                    // 更新页面标题和描述
+                    const typeInfo = typeNames[contentType];
+                    categoryTitle.textContent = `${typeInfo.icon} ${typeInfo.name}`;
+                    categoryDescription.textContent = typeInfo.description;
+                    document.title = `${typeInfo.name} - 青少年阅读平台`;
+
+                    // 加载内容数据
+                    const allContent = await dataLoader.loadContent();
+                    
+                    // 筛选指定类型的内容
+                    const filteredContent = allContent.filter(item => item.type === contentType);
+
+                    // 隐藏加载状态
+                    loadingIndicator.style.display = 'none';
+
+                    // 检查是否有内容
+                    if (filteredContent.length === 0) {
+                        emptyState.style.display = 'block';
+                        return;
+                    }
+
+                    // 渲染内容列表
+                    contentContainer.style.display = 'grid';
+                    renderer.renderContentList(contentContainer, filteredContent);
+
+                    // 初始化图片懒加载
+                    lazyLoadImages();
+
+                } catch (error) {
+                    console.error('加载内容失败:', error);
+                    loadingIndicator.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                    errorText.textContent = `加载失败: ${error.message}`;
+                }
+            }
+
+            // 重试按钮事件
+            retryButton.addEventListener('click', loadContent);
+
+            // 初始加载
+            loadContent();
+        })();
+    </script>
+</body>
+</html>

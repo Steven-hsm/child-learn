@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家姓全文 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        .book-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .book-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        .book-text {
+            line-height: 2.5;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .book-text p {
+            margin-bottom: 0.5rem;
+        }
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-size: 0.5em;
+            color: #666;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 2rem auto;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+        }
+        .pagination {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .pagination button {
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .pagination .page-info {
+            display: inline-block;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-content">
+        <a href="../detail.html?id=book-002" class="back-button">← 返回</a>
+        <h1 class="book-title">百家姓</h1>
+        
+        <div class="pagination">
+            <button id="prevBtn" onclick="changePage(-1)">上一页</button>
+            <span class="page-info">第 <span id="currentPage">1</span> / <span id="totalPages">3</span> 页</span>
+            <button id="nextBtn" onclick="changePage(1)">下一页</button>
+        </div>
+
+        <div id="page1" class="page active book-text">
+            <p><ruby>赵<rt>zhào</rt></ruby><ruby>钱<rt>qián</rt></ruby><ruby>孙<rt>sūn</rt></ruby><ruby>李<rt>lǐ</rt></ruby>，<ruby>周<rt>zhōu</rt></ruby><ruby>吴<rt>wú</rt></ruby><ruby>郑<rt>zhèng</rt></ruby><ruby>王<rt>wáng</rt></ruby>。</p>
+            <p><ruby>冯<rt>féng</rt></ruby><ruby>陈<rt>chén</rt></ruby><ruby>褚<rt>chǔ</rt></ruby><ruby>卫<rt>wèi</rt></ruby>，<ruby>蒋<rt>jiǎng</rt></ruby><ruby>沈<rt>shěn</rt></ruby><ruby>韩<rt>hán</rt></ruby><ruby>杨<rt>yáng</rt></ruby>。</p>
+            <p><ruby>朱<rt>zhū</rt></ruby><ruby>秦<rt>qín</rt></ruby><ruby>尤<rt>yóu</rt></ruby><ruby>许<rt>xǔ</rt></ruby>，<ruby>何<rt>hé</rt></ruby><ruby>吕<rt>lǚ</rt></ruby><ruby>施<rt>shī</rt></ruby><ruby>张<rt>zhāng</rt></ruby>。</p>
+            <p><ruby>孔<rt>kǒng</rt></ruby><ruby>曹<rt>cáo</rt></ruby><ruby>严<rt>yán</rt></ruby><ruby>华<rt>huá</rt></ruby>，<ruby>金<rt>jīn</rt></ruby><ruby>魏<rt>wèi</rt></ruby><ruby>陶<rt>táo</rt></ruby><ruby>姜<rt>jiāng</rt></ruby>。</p>
+            <p><ruby>戚<rt>qī</rt></ruby><ruby>谢<rt>xiè</rt></ruby><ruby>邹<rt>zōu</rt></ruby><ruby>喻<rt>yù</rt></ruby>，<ruby>柏<rt>bǎi</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><ruby>窦<rt>dòu</rt></ruby><ruby>章<rt>zhāng</rt></ruby>。</p>
+            <p><ruby>云<rt>yún</rt></ruby><ruby>苏<rt>sū</rt></ruby><ruby>潘<rt>pān</rt></ruby><ruby>葛<rt>gě</rt></ruby>，<ruby>奚<rt>xī</rt></ruby><ruby>范<rt>fàn</rt></ruby><ruby>彭<rt>péng</rt></ruby><ruby>郎<rt>láng</rt></ruby>。</p>
+            <p><ruby>鲁<rt>lǔ</rt></ruby><ruby>韦<rt>wéi</rt></ruby><ruby>昌<rt>chāng</rt></ruby><ruby>马<rt>mǎ</rt></ruby>，<ruby>苗<rt>miáo</rt></ruby><ruby>凤<rt>fèng</rt></ruby><ruby>花<rt>huā</rt></ruby><ruby>方<rt>fāng</rt></ruby>。</p>
+            <p><ruby>俞<rt>yú</rt></ruby><ruby>任<rt>rèn</rt></ruby><ruby>袁<rt>yuán</rt></ruby><ruby>柳<rt>liǔ</rt></ruby>，<ruby>酆<rt>fēng</rt></ruby><ruby>鲍<rt>bào</rt></ruby><ruby>史<rt>shǐ</rt></ruby><ruby>唐<rt>táng</rt></ruby>。</p>
+            <p><ruby>费<rt>fèi</rt></ruby><ruby>廉<rt>lián</rt></ruby><ruby>岑<rt>cén</rt></ruby><ruby>薛<rt>xuē</rt></ruby>，<ruby>雷<rt>léi</rt></ruby><ruby>贺<rt>hè</rt></ruby><ruby>倪<rt>ní</rt></ruby><ruby>汤<rt>tāng</rt></ruby>。</p>
+            <p><ruby>滕<rt>téng</rt></ruby><ruby>殷<rt>yīn</rt></ruby><ruby>罗<rt>luó</rt></ruby><ruby>毕<rt>bì</rt></ruby>，<ruby>郝<rt>hǎo</rt></ruby><ruby>邬<rt>wū</rt></ruby><ruby>安<rt>ān</rt></ruby><ruby>常<rt>cháng</rt></ruby>。</p>
+            <p><ruby>乐<rt>lè</rt></ruby><ruby>于<rt>yú</rt></ruby><ruby>时<rt>shí</rt></ruby><ruby>傅<rt>fù</rt></ruby>，<ruby>皮<rt>pí</rt></ruby><ruby>卞<rt>biàn</rt></ruby><ruby>齐<rt>qí</rt></ruby><ruby>康<rt>kāng</rt></ruby>。</p>
+            <p><ruby>伍<rt>wǔ</rt></ruby><ruby>余<rt>yú</rt></ruby><ruby>元<rt>yuán</rt></ruby><ruby>卜<rt>bǔ</rt></ruby>，<ruby>顾<rt>gù</rt></ruby><ruby>孟<rt>mèng</rt></ruby><ruby>平<rt>píng</rt></ruby><ruby>黄<rt>huáng</rt></ruby>。</p>
+            <p><ruby>和<rt>hé</rt></ruby><ruby>穆<rt>mù</rt></ruby><ruby>萧<rt>xiāo</rt></ruby><ruby>尹<rt>yǐn</rt></ruby>，<ruby>姚<rt>yáo</rt></ruby><ruby>邵<rt>shào</rt></ruby><ruby>湛<rt>zhàn</rt></ruby><ruby>汪<rt>wāng</rt></ruby>。</p>
+            <p><ruby>祁<rt>qí</rt></ruby><ruby>毛<rt>máo</rt></ruby><ruby>禹<rt>yǔ</rt></ruby><ruby>狄<rt>dí</rt></ruby>，<ruby>米<rt>mǐ</rt></ruby><ruby>贝<rt>bèi</rt></ruby><ruby>明<rt>míng</rt></ruby><ruby>臧<rt>zāng</rt></ruby>。</p>
+            <p><ruby>计<rt>jì</rt></ruby><ruby>伏<rt>fú</rt></ruby><ruby>成<rt>chéng</rt></ruby><ruby>戴<rt>dài</rt></ruby>，<ruby>谈<rt>tán</rt></ruby><ruby>宋<rt>sòng</rt></ruby><ruby>茅<rt>máo</rt></ruby><ruby>庞<rt>páng</rt></ruby>。</p>
+            <p><ruby>熊<rt>xióng</rt></ruby><ruby>纪<rt>jì</rt></ruby><ruby>舒<rt>shū</rt></ruby><ruby>屈<rt>qū</rt></ruby>，<ruby>项<rt>xiàng</rt></ruby><ruby>祝<rt>zhù</rt></ruby><ruby>董<rt>dǒng</rt></ruby><ruby>梁<rt>liáng</rt></ruby>。</p>
+            <p><ruby>杜<rt>dù</rt></ruby><ruby>阮<rt>ruǎn</rt></ruby><ruby>蓝<rt>lán</rt></ruby><ruby>闵<rt>mǐn</rt></ruby>，<ruby>席<rt>xí</rt></ruby><ruby>季<rt>jì</rt></ruby><ruby>麻<rt>má</rt></ruby><ruby>强<rt>qiáng</rt></ruby>。</p>
+        </div>
+
+        <div id="page2" class="page book-text">
+            <p><ruby>贾<rt>jiǎ</rt></ruby><ruby>路<rt>lù</rt></ruby><ruby>娄<rt>lóu</rt></ruby><ruby>危<rt>wēi</rt></ruby>，<ruby>江<rt>jiāng</rt></ruby><ruby>童<rt>tóng</rt></ruby><ruby>颜<rt>yán</rt></ruby><ruby>郭<rt>guō</rt></ruby>。</p>
+            <p><ruby>梅<rt>méi</rt></ruby><ruby>盛<rt>shèng</rt></ruby><ruby>林<rt>lín</rt></ruby><ruby>刁<rt>diāo</rt></ruby>，<ruby>钟<rt>zhōng</rt></ruby><ruby>徐<rt>xú</rt></ruby><ruby>邱<rt>qiū</rt></ruby><ruby>骆<rt>luò</rt></ruby>。</p>
+            <p><ruby>高<rt>gāo</rt></ruby><ruby>夏<rt>xià</rt></ruby><ruby>蔡<rt>cài</rt></ruby><ruby>田<rt>tián</rt></ruby>，<ruby>樊<rt>fán</rt></ruby><ruby>胡<rt>hú</rt></ruby><ruby>凌<rt>líng</rt></ruby><ruby>霍<rt>huò</rt></ruby>。</p>
+            <p><ruby>虞<rt>yú</rt></ruby><ruby>万<rt>wàn</rt></ruby><ruby>支<rt>zhī</rt></ruby><ruby>柯<rt>kē</rt></ruby>，<ruby>昝<rt>zǎn</rt></ruby><ruby>管<rt>guǎn</rt></ruby><ruby>卢<rt>lú</rt></ruby><ruby>莫<rt>mò</rt></ruby>。</p>
+            <p><ruby>经<rt>jīng</rt></ruby><ruby>房<rt>fáng</rt></ruby><ruby>裘<rt>qiú</rt></ruby><ruby>缪<rt>miào</rt></ruby>，<ruby>干<rt>gān</rt></ruby><ruby>解<rt>xiè</rt></ruby><ruby>应<rt>yīng</rt></ruby><ruby>宗<rt>zōng</rt></ruby>。</p>
+            <p><ruby>丁<rt>dīng</rt></ruby><ruby>宣<rt>xuān</rt></ruby><ruby>贲<rt>bēn</rt></ruby><ruby>邓<rt>dèng</rt></ruby>，<ruby>郁<rt>yù</rt></ruby><ruby>单<rt>shàn</rt></ruby><ruby>杭<rt>háng</rt></ruby><ruby>洪<rt>hóng</rt></ruby>。</p>
+            <p><ruby>包<rt>bāo</rt></ruby><ruby>诸<rt>zhū</rt></ruby><ruby>左<rt>zuǒ</rt></ruby><ruby>石<rt>shí</rt></ruby>，<ruby>崔<rt>cuī</rt></ruby><ruby>吉<rt>jí</rt></ruby><ruby>钮<rt>niǔ</rt></ruby><ruby>龚<rt>gōng</rt></ruby>。</p>
+            <p><ruby>程<rt>chéng</rt></ruby><ruby>嵇<rt>jī</rt></ruby><ruby>邢<rt>xíng</rt></ruby><ruby>滑<rt>huá</rt></ruby>，<ruby>裴<rt>péi</rt></ruby><ruby>陆<rt>lù</rt></ruby><ruby>荣<rt>róng</rt></ruby><ruby>翁<rt>wēng</rt></ruby>。</p>
+            <p><ruby>荀<rt>xún</rt></ruby><ruby>羊<rt>yáng</rt></ruby><ruby>於<rt>yū</rt></ruby><ruby>惠<rt>huì</rt></ruby>，<ruby>甄<rt>zhēn</rt></ruby><ruby>曲<rt>qū</rt></ruby><ruby>家<rt>jiā</rt></ruby><ruby>封<rt>fēng</rt></ruby>。</p>
+            <p><ruby>芮<rt>ruì</rt></ruby><ruby>羿<rt>yì</rt></ruby><ruby>储<rt>chǔ</rt></ruby><ruby>靳<rt>jìn</rt></ruby>，<ruby>汲<rt>jí</rt></ruby><ruby>邴<rt>bǐng</rt></ruby><ruby>糜<rt>mí</rt></ruby><ruby>松<rt>sōng</rt></ruby>。</p>
+            <p><ruby>井<rt>jǐng</rt></ruby><ruby>段<rt>duàn</rt></ruby><ruby>富<rt>fù</rt></ruby><ruby>巫<rt>wū</rt></ruby>，<ruby>乌<rt>wū</rt></ruby><ruby>焦<rt>jiāo</rt></ruby><ruby>巴<rt>bā</rt></ruby><ruby>弓<rt>gōng</rt></ruby>。</p>
+            <p><ruby>牧<rt>mù</rt></ruby><ruby>隗<rt>kuí</rt></ruby><ruby>山<rt>shān</rt></ruby><ruby>谷<rt>gǔ</rt></ruby>，<ruby>车<rt>chē</rt></ruby><ruby>侯<rt>hóu</rt></ruby><ruby>宓<rt>mì</rt></ruby><ruby>蓬<rt>péng</rt></ruby>。</p>
+            <p><ruby>全<rt>quán</rt></ruby><ruby>郗<rt>xī</rt></ruby><ruby>班<rt>bān</rt></ruby><ruby>仰<rt>yǎng</rt></ruby>，<ruby>秋<rt>qiū</rt></ruby><ruby>仲<rt>zhòng</rt></ruby><ruby>伊<rt>yī</rt></ruby><ruby>宫<rt>gōng</rt></ruby>。</p>
+            <p><ruby>宁<rt>níng</rt></ruby><ruby>仇<rt>qiú</rt></ruby><ruby>栾<rt>luán</rt></ruby><ruby>暴<rt>bào</rt></ruby>，<ruby>甘<rt>gān</rt></ruby><ruby>钭<rt>tǒu</rt></ruby><ruby>厉<rt>lì</rt></ruby><ruby>戎<rt>róng</rt></ruby>。</p>
+            <p><ruby>祖<rt>zǔ</rt></ruby><ruby>武<rt>wǔ</rt></ruby><ruby>符<rt>fú</rt></ruby><ruby>刘<rt>liú</rt></ruby>，<ruby>景<rt>jǐng</rt></ruby><ruby>詹<rt>zhān</rt></ruby><ruby>束<rt>shù</rt></ruby><ruby>龙<rt>lóng</rt></ruby>。</p>
+            <p><ruby>叶<rt>yè</rt></ruby><ruby>幸<rt>xìng</rt></ruby><ruby>司<rt>sī</rt></ruby><ruby>韶<rt>sháo</rt></ruby>，<ruby>郜<rt>gào</rt></ruby><ruby>黎<rt>lí</rt></ruby><ruby>蓟<rt>jì</rt></ruby><ruby>薄<rt>bó</rt></ruby>。</p>
+        </div>
+
+        <div id="page3" class="page book-text">
+            <p><ruby>印<rt>yìn</rt></ruby><ruby>宿<rt>sù</rt></ruby><ruby>白<rt>bái</rt></ruby><ruby>怀<rt>huái</rt></ruby>，<ruby>蒲<rt>pú</rt></ruby><ruby>邰<rt>tái</rt></ruby><ruby>从<rt>cóng</rt></ruby><ruby>鄂<rt>è</rt></ruby>。</p>
+            <p><ruby>索<rt>suǒ</rt></ruby><ruby>咸<rt>xián</rt></ruby><ruby>籍<rt>jí</rt></ruby><ruby>赖<rt>lài</rt></ruby>，<ruby>卓<rt>zhuó</rt></ruby><ruby>蔺<rt>lìn</rt></ruby><ruby>屠<rt>tú</rt></ruby><ruby>蒙<rt>méng</rt></ruby>。</p>
+            <p><ruby>池<rt>chí</rt></ruby><ruby>乔<rt>qiáo</rt></ruby><ruby>阴<rt>yīn</rt></ruby><ruby>鬱<rt>yù</rt></ruby>，<ruby>胥<rt>xū</rt></ruby><ruby>能<rt>néng</rt></ruby><ruby>苍<rt>cāng</rt></ruby><ruby>双<rt>shuāng</rt></ruby>。</p>
+            <p><ruby>闻<rt>wén</rt></ruby><ruby>莘<rt>shēn</rt></ruby><ruby>党<rt>dǎng</rt></ruby><ruby>翟<rt>zhái</rt></ruby>，<ruby>谭<rt>tán</rt></ruby><ruby>贡<rt>gòng</rt></ruby><ruby>劳<rt>láo</rt></ruby><ruby>逄<rt>páng</rt></ruby>。</p>
+            <p><ruby>姬<rt>jī</rt></ruby><ruby>申<rt>shēn</rt></ruby><ruby>扶<rt>fú</rt></ruby><ruby>堵<rt>dǔ</rt></ruby>，<ruby>冉<rt>rǎn</rt></ruby><ruby>宰<rt>zǎi</rt></ruby><ruby>郦<rt>lì</rt></ruby><ruby>雍<rt>yōng</rt></ruby>。</p>
+            <p><ruby>郤<rt>xì</rt></ruby><ruby>璩<rt>qú</rt></ruby><ruby>桑<rt>sāng</rt></ruby><ruby>桂<rt>guì</rt></ruby>，<ruby>濮<rt>pú</rt></ruby><ruby>牛<rt>niú</rt></ruby><ruby>寿<rt>shòu</rt></ruby><ruby>通<rt>tōng</rt></ruby>。</p>
+            <p><ruby>边<rt>biān</rt></ruby><ruby>扈<rt>hù</rt></ruby><ruby>燕<rt>yān</rt></ruby><ruby>冀<rt>jì</rt></ruby>，<ruby>郏<rt>jiá</rt></ruby><ruby>浦<rt>pǔ</rt></ruby><ruby>尚<rt>shàng</rt></ruby><ruby>农<rt>nóng</rt></ruby>。</p>
+            <p><ruby>温<rt>wēn</rt></ruby><ruby>别<rt>bié</rt></ruby><ruby>庄<rt>zhuāng</rt></ruby><ruby>晏<rt>yàn</rt></ruby>，<ruby>柴<rt>chái</rt></ruby><ruby>瞿<rt>qú</rt></ruby><ruby>阎<rt>yán</rt></ruby><ruby>充<rt>chōng</rt></ruby>。</p>
+            <p><ruby>慕<rt>mù</rt></ruby><ruby>连<rt>lián</rt></ruby><ruby>茹<rt>rú</rt></ruby><ruby>习<rt>xí</rt></ruby>，<ruby>宦<rt>huàn</rt></ruby><ruby>艾<rt>ài</rt></ruby><ruby>鱼<rt>yú</rt></ruby><ruby>容<rt>róng</rt></ruby>。</p>
+            <p><ruby>向<rt>xiàng</rt></ruby><ruby>古<rt>gǔ</rt></ruby><ruby>易<rt>yì</rt></ruby><ruby>慎<rt>shèn</rt></ruby>，<ruby>戈<rt>gē</rt></ruby><ruby>廖<rt>liào</rt></ruby><ruby>庾<rt>yǔ</rt></ruby><ruby>终<rt>zhōng</rt></ruby>。</p>
+            <p><ruby>暨<rt>jì</rt></ruby><ruby>居<rt>jū</rt></ruby><ruby>衡<rt>héng</rt></ruby><ruby>步<rt>bù</rt></ruby>，<ruby>都<rt>dū</rt></ruby><ruby>耿<rt>gěng</rt></ruby><ruby>满<rt>mǎn</rt></ruby><ruby>弘<rt>hóng</rt></ruby>。</p>
+            <p><ruby>匡<rt>kuāng</rt></ruby><ruby>国<rt>guó</rt></ruby><ruby>文<rt>wén</rt></ruby><ruby>寇<rt>kòu</rt></ruby>，<ruby>广<rt>guǎng</rt></ruby><ruby>禄<rt>lù</rt></ruby><ruby>阙<rt>quē</rt></ruby><ruby>东<rt>dōng</rt></ruby>。</p>
+            <p><ruby>欧<rt>ōu</rt></ruby><ruby>殳<rt>shū</rt></ruby><ruby>沃<rt>wò</rt></ruby><ruby>利<rt>lì</rt></ruby>，<ruby>蔚<rt>wèi</rt></ruby><ruby>越<rt>yuè</rt></ruby><ruby>夔<rt>kuí</rt></ruby><ruby>隆<rt>lóng</rt></ruby>。</p>
+            <p><ruby>师<rt>shī</rt></ruby><ruby>巩<rt>gǒng</rt></ruby><ruby>厍<rt>shè</rt></ruby><ruby>聂<rt>niè</rt></ruby>，<ruby>晁<rt>cháo</rt></ruby><ruby>勾<rt>gōu</rt></ruby><ruby>敖<rt>áo</rt></ruby><ruby>融<rt>róng</rt></ruby>。</p>
+            <p><ruby>冷<rt>lěng</rt></ruby><ruby>訾<rt>zī</rt></ruby><ruby>辛<rt>xīn</rt></ruby><ruby>阚<rt>kàn</rt></ruby>，<ruby>那<rt>nà</rt></ruby><ruby>简<rt>jiǎn</rt></ruby><ruby>饶<rt>ráo</rt></ruby><ruby>空<rt>kōng</rt></ruby>。</p>
+            <p><ruby>曾<rt>zēng</rt></ruby><ruby>毋<rt>wú</rt></ruby><ruby>沙<rt>shā</rt></ruby><ruby>乜<rt>niè</rt></ruby>，<ruby>养<rt>yǎng</rt></ruby><ruby>鞠<rt>jū</rt></ruby><ruby>须<rt>xū</rt></ruby><ruby>丰<rt>fēng</rt></ruby>。</p>
+            <p><ruby>巢<rt>cháo</rt></ruby><ruby>关<rt>guān</rt></ruby><ruby>蒯<rt>kuǎi</rt></ruby><ruby>相<rt>xiāng</rt></ruby>，<ruby>查<rt>zhā</rt></ruby><ruby>后<rt>hòu</rt></ruby><ruby>荆<rt>jīng</rt></ruby><ruby>红<rt>hóng</rt></ruby>。</p>
+            <p><ruby>游<rt>yóu</rt></ruby><ruby>竺<rt>zhú</rt></ruby><ruby>权<rt>quán</rt></ruby><ruby>逯<rt>lù</rt></ruby>，<ruby>盖<rt>gài</rt></ruby><ruby>益<rt>yì</rt></ruby><ruby>桓<rt>huán</rt></ruby><ruby>公<rt>gōng</rt></ruby>。</p>
+        </div>
+
+        <div class="pagination">
+            <button id="prevBtn2" onclick="changePage(-1)">上一页</button>
+            <span class="page-info">第 <span id="currentPage2">1</span> / <span id="totalPages2">3</span> 页</span>
+            <button id="nextBtn2" onclick="changePage(1)">下一页</button>
+        </div>
+
+        <a href="../detail.html?id=book-002" class="back-button">← 返回</a>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function changePage(direction) {
+            const newPage = currentPage + direction;
+            if (newPage < 1 || newPage > totalPages) return;
+
+            // 隐藏当前页
+            document.getElementById('page' + currentPage).classList.remove('active');
+            
+            // 显示新页
+            currentPage = newPage;
+            document.getElementById('page' + currentPage).classList.add('active');
+            
+            // 更新页码显示
+            document.getElementById('currentPage').textContent = currentPage;
+            document.getElementById('currentPage2').textContent = currentPage;
+            
+            // 更新按钮状态
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('prevBtn2').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+            document.getElementById('nextBtn2').disabled = currentPage === totalPages;
+            
+            // 滚动到顶部
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 初始化按钮状态
+        document.getElementById('prevBtn').disabled = true;
+        document.getElementById('prevBtn2').disabled = true;
+    </script>
+</body>
+</html>

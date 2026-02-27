@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="关于青少年阅读平台">
+    <title>关于我们 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/themes.css">
+</head>
+<body>
+    <nav class="main-nav" role="navigation">
+        <div class="nav-container">
+            <a href="./" class="logo">青少年阅读平台</a>
+            <ul class="nav-menu">
+                <li><a href="./category.html?type=books">书籍</a></li>
+                <li><a href="./category.html?type=documentaries">纪录片</a></li>
+                <li><a href="./category.html?type=tv-series">电视剧</a></li>
+                <li><a href="./category.html?type=movies">电影</a></li>
+                <li><a href="./category.html?type=kids">少儿频道</a></li>
+                <li><a href="./about.html">关于</a></li>
+            </ul>
+            <div class="search-box">
+                <form action="./search.html" method="get">
+                    <input type="search" name="q" placeholder="搜索内容..." aria-label="搜索">
+                    <button type="submit" aria-label="提交搜索">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-page">
+        <section class="about-intro" id="intro">
+            <div class="container">
+                <h1>关于青少年阅读平台</h1>
+                <p class="lead">青少年阅读平台是一个专为青少年设计的多媒体内容平台，提供书籍、纪录片、电视剧、电影和少儿频道等多种内容类型。我们致力于为青少年提供丰富、安全、适龄的阅读和观看体验，帮助他们培养良好的阅读习惯和媒体素养。</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">📚</span>
+                        <h3>丰富内容</h3>
+                        <p>涵盖书籍、纪录片、电视剧、电影和少儿频道等多种类型</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>安全可靠</h3>
+                        <p>所有内容经过严格审核，确保适合青少年观看</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎯</span>
+                        <h3>适龄分级</h3>
+                        <p>清晰的年龄分级标识，帮助选择合适的内容</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔍</span>
+                        <h3>便捷搜索</h3>
+                        <p>强大的搜索功能，快速找到感兴趣的内容</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="age-ratings" id="age-ratings">
+            <div class="container">
+                <h2>年龄分级说明</h2>
+                <p class="section-intro">为了帮助家长和教育者为青少年选择适龄内容，我们为每个内容项标注了年龄分级。以下是各年龄分级的详细说明：</p>
+                <div id="age-rating-table" class="age-rating-grid">
+                    <!-- 年龄分级表格将通过 JavaScript 动态加载 -->
+                </div>
+            </div>
+        </section>
+
+        <section class="content-policy" id="content-policy">
+            <div class="container">
+                <h2>内容审核标准</h2>
+                <p class="section-intro">平台上的所有内容都经过严格审核，确保适合青少年观看。我们的审核标准包括：</p>
+                <div class="policy-grid">
+                    <div class="policy-item">
+                        <span class="policy-icon">✅</span>
+                        <h3>积极向上</h3>
+                        <p>内容传递正能量，培养积极的价值观和人生态度</p>
+                    </div>
+                    <div class="policy-item">
+                        <span class="policy-icon">🎓</span>
+                        <h3>适龄认知</h3>
+                        <p>符合相应年龄段的认知水平和理解能力</p>
+                    </div>
+                    <div class="policy-item">
+                        <span class="policy-icon">🚫</span>
+                        <h3>内容过滤</h3>
+                        <p>不包含暴力、色情、恐怖等不适宜青少年的内容</p>
+                    </div>
+                    <div class="policy-item">
+                        <span class="policy-icon">🌍</span>
+                        <h3>文化多元</h3>
+                        <p>尊重文化多样性，促进包容理解和国际视野</p>
+                    </div>
+                    <div class="policy-item">
+                        <span class="policy-icon">🧠</span>
+                        <h3>启发思考</h3>
+                        <p>鼓励独立思考，培养批判性思维能力</p>
+                    </div>
+                    <div class="policy-item">
+                        <span class="policy-icon">❤️</span>
+                        <h3>情感健康</h3>
+                        <p>关注青少年心理健康，传递温暖和关怀</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="help" id="help">
+            <div class="container">
+                <h2>使用帮助</h2>
+                
+                <div class="help-section">
+                    <h3>📖 如何浏览内容？</h3>
+                    <p>您可以通过以下方式浏览平台内容：</p>
+                    <ul>
+                        <li><strong>导航栏分类</strong>：点击顶部导航栏的分类链接（书籍、纪录片、电视剧、电影、少儿频道）</li>
+                        <li><strong>首页推荐</strong>：在首页查看编辑精选的推荐内容</li>
+                        <li><strong>搜索功能</strong>：使用搜索框输入关键词查找特定内容</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3>🎯 如何理解年龄分级？</h3>
+                    <p>年龄分级标识显示在每个内容项的封面右上角，颜色和数字代表不同的适用年龄段：</p>
+                    <ul>
+                        <li><strong class="age-6">6+</strong>：适合 6 岁及以上儿童，内容简单易懂，充满童趣</li>
+                        <li><strong class="age-9">9+</strong>：适合 9 岁及以上儿童，内容稍有深度，培养思考能力</li>
+                        <li><strong class="age-12">12+</strong>：适合 12 岁及以上青少年，内容更加丰富，涉及更广泛的主题</li>
+                        <li><strong class="age-15">15+</strong>：适合 15 岁及以上青少年，内容较为成熟，需要一定的理解能力</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3>🔍 如何搜索内容？</h3>
+                    <p>使用搜索功能可以快速找到您感兴趣的内容：</p>
+                    <ul>
+                        <li>在页面顶部的搜索框中输入关键词</li>
+                        <li>支持搜索标题和简介中的内容</li>
+                        <li>可以输入多个关键词（用空格分隔）进行组合搜索</li>
+                        <li>搜索结果会高亮显示匹配的关键词</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3>📱 如何在不同设备上使用？</h3>
+                    <p>平台采用响应式设计，可以在各种设备上流畅使用：</p>
+                    <ul>
+                        <li><strong>电脑</strong>：使用鼠标点击和键盘操作，享受大屏幕浏览体验</li>
+                        <li><strong>平板</strong>：支持触摸操作，布局自动适配屏幕尺寸</li>
+                        <li><strong>手机</strong>：优化的移动端界面，单手操作更便捷</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3>❓ 常见问题</h3>
+                    <dl class="faq-list">
+                        <dt>Q: 平台内容是否免费？</dt>
+                        <dd>A: 平台提供的内容链接可能指向第三方网站，具体是否免费请查看目标网站的说明。</dd>
+                        
+                        <dt>Q: 如何判断内容是否适合我的孩子？</dt>
+                        <dd>A: 请参考年龄分级标识，并结合孩子的实际情况和兴趣进行选择。建议家长陪同观看并进行适当引导。</dd>
+                        
+                        <dt>Q: 可以推荐新内容吗？</dt>
+                        <dd>A: 我们欢迎您的建议！请通过平台反馈渠道提交您的推荐。</dd>
+                        
+                        <dt>Q: 平台支持哪些浏览器？</dt>
+                        <dd>A: 平台支持所有现代浏览器，包括 Chrome、Firefox、Safari、Edge 等。建议使用最新版本以获得最佳体验。</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 青少年阅读平台. 为青少年提供安全、适龄的内容。</p>
+    </footer>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/dataLoader.js"></script>
+    <script>
+        // 初始化搜索框
+        initSearchBox();
+        
+        // 加载并渲染年龄分级说明
+        (async function() {
+            try {
+                const dataLoader = new DataLoader();
+                const config = await dataLoader.loadConfig();
+                
+                if (config && config.ageRatings) {
+                    renderAgeRatings(config.ageRatings);
+                }
+            } catch (error) {
+                console.error('加载年龄分级配置失败:', error);
+                // 使用默认数据
+                renderAgeRatings([
+                    {
+                        value: "6+",
+                        label: "6岁以上",
+                        color: "#4CAF50",
+                        description: "适合6岁及以上儿童，内容简单易懂，充满童趣，培养基本认知能力"
+                    },
+                    {
+                        value: "9+",
+                        label: "9岁以上",
+                        color: "#2196F3",
+                        description: "适合9岁及以上儿童，内容稍有深度，培养思考能力和学习兴趣"
+                    },
+                    {
+                        value: "12+",
+                        label: "12岁以上",
+                        color: "#FF9800",
+                        description: "适合12岁及以上青少年，内容更加丰富，涉及更广泛的主题和知识"
+                    },
+                    {
+                        value: "15+",
+                        label: "15岁以上",
+                        color: "#F44336",
+                        description: "适合15岁及以上青少年，内容较为成熟，需要一定的理解能力和判断力"
+                    }
+                ]);
+            }
+        })();
+        
+        /**
+         * 渲染年龄分级说明
+         * @param {Array} ageRatings - 年龄分级配置数组
+         */
+        function renderAgeRatings(ageRatings) {
+            const container = document.getElementById('age-rating-table');
+            
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            ageRatings.forEach(rating => {
+                const ratingValue = rating.value.replace('+', '');
+                const card = document.createElement('div');
+                card.className = `age-rating-card rating-${ratingValue}`;
+                
+                card.innerHTML = `
+                    <div class="age-rating-badge">${escapeHtml(rating.value)}</div>
+                    <h3>${escapeHtml(rating.label)}</h3>
+                    <p>${escapeHtml(rating.description)}</p>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

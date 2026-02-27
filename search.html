@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="搜索内容">
+    <title>搜索结果 - 青少年阅读平台</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/themes.css">
+</head>
+<body>
+    <nav class="main-nav" role="navigation">
+        <div class="nav-container">
+            <a href="./" class="logo">青少年阅读平台</a>
+            <ul class="nav-menu">
+                <li><a href="./category.html?type=books">书籍</a></li>
+                <li><a href="./category.html?type=documentaries">纪录片</a></li>
+                <li><a href="./category.html?type=tv-series">电视剧</a></li>
+                <li><a href="./category.html?type=movies">电影</a></li>
+                <li><a href="./category.html?type=kids">少儿频道</a></li>
+                <li><a href="./about.html">关于</a></li>
+            </ul>
+            <div class="search-box">
+                <form action="./search.html" method="get">
+                    <input type="search" name="q" id="search-input" placeholder="搜索内容..." aria-label="搜索">
+                    <button type="submit" aria-label="提交搜索">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="search-header">
+            <h1>搜索结果</h1>
+            <div class="search-box-large">
+                <form id="search-form" action="./search.html" method="get">
+                    <input type="search" name="q" id="search-keyword" placeholder="输入关键词搜索..." aria-label="搜索关键词" required>
+                    <button type="submit" aria-label="搜索">🔍 搜索</button>
+                </form>
+            </div>
+            <p id="search-info" class="search-info" aria-live="polite">正在搜索...</p>
+        </section>
+
+        <section class="search-results">
+            <div id="results-container" class="content-grid">
+                <!-- 搜索结果将通过 JavaScript 动态加载 -->
+            </div>
+            
+            <!-- 无结果提示 -->
+            <div id="no-results" class="no-results" style="display: none;">
+                <div class="empty-state">
+                    <span class="empty-icon">🔍</span>
+                    <h2>未找到相关内容</h2>
+                    <p>试试其他关键词，或浏览我们的分类内容</p>
+                    <div class="category-links">
+                        <a href="./category.html?type=books" class="btn btn-secondary">浏览书籍</a>
+                        <a href="./category.html?type=documentaries" class="btn btn-secondary">浏览纪录片</a>
+                        <a href="./category.html?type=movies" class="btn btn-secondary">浏览电影</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 加载状态 -->
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>正在加载...</p>
+            </div>
+            
+            <!-- 错误提示 -->
+            <div id="error" class="error-message" style="display: none;">
+                <span class="error-icon">⚠️</span>
+                <p id="error-text">加载失败，请稍后重试</p>
+                <button id="retry-btn" class="btn btn-primary">重试</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 青少年阅读平台. 为青少年提供安全、适龄的内容。</p>
+    </footer>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/dataLoader.js"></script>
+    <script src="./js/searchEngine.js"></script>
+    <script src="./js/renderer.js"></script>
+    <script>
+        // 搜索结果页逻辑
+        (async function() {
+            const searchKeywordInput = document.getElementById('search-keyword');
+            const searchInfo = document.getElementById('search-info');
+            const resultsContainer = document.getElementById('results-container');
+            const noResults = document.getElementById('no-results');
+            const loading = document.getElementById('loading');
+            const errorDiv = document.getElementById('error');
+            const errorText = document.getElementById('error-text');
+            const retryBtn = document.getElementById('retry-btn');
+            const searchForm = document.getElementById('search-form');
+            
+            const dataLoader = new DataLoader();
+            const searchEngine = new SearchEngine();
+            const renderer = new Renderer();
+            
+            // 从 URL 获取搜索关键词
+            const urlParams = new URLSearchParams(window.location.search);
+            const keyword = urlParams.get('q') || '';
+            
+            // 设置搜索框的值
+            if (searchKeywordInput) {
+                searchKeywordInput.value = keyword;
+            }
+            
+            // 执行搜索
+            async function performSearch(searchKeyword) {
+                if (!searchKeyword || searchKeyword.trim() === '') {
+                    searchInfo.textContent = '请输入搜索关键词';
+                    resultsContainer.innerHTML = '';
+                    noResults.style.display = 'none';
+                    loading.style.display = 'none';
+                    errorDiv.style.display = 'none';
+                    return;
+                }
+                
+                try {
+                    // 显示加载状态
+                    loading.style.display = 'block';
+                    resultsContainer.innerHTML = '';
+                    noResults.style.display = 'none';
+                    errorDiv.style.display = 'none';
+                    searchInfo.textContent = '正在搜索...';
+                    
+                    // 加载内容数据
+                    const content = await dataLoader.loadContent();
+                    
+                    // 设置搜索引擎数据源
+                    searchEngine.setData(content);
+                    
+                    // 执行搜索
+                    const results = searchEngine.search(searchKeyword);
+                    
+                    // 隐藏加载状态
+                    loading.style.display = 'none';
+                    
+                    // 显示搜索结果
+                    if (results.length > 0) {
+                        searchInfo.textContent = `找到 ${results.length} 个相关结果`;
+                        
+                        // 渲染搜索结果（带关键词高亮）
+                        results.forEach(item => {
+                            const card = document.createElement('div');
+                            card.innerHTML = renderer.renderContentCard(item);
+                            
+                            // 高亮关键词
+                            const titleElement = card.querySelector('.card-title');
+                            const descElement = card.querySelector('.card-description');
+                            
+                            if (titleElement) {
+                                titleElement.innerHTML = searchEngine.highlight(titleElement.textContent, searchKeyword);
+                            }
+                            if (descElement) {
+                                descElement.innerHTML = searchEngine.highlight(descElement.textContent, searchKeyword);
+                            }
+                            
+                            resultsContainer.appendChild(card);
+                        });
+                        
+                        // 启用图片懒加载
+                        lazyLoadImages(resultsContainer);
+                    } else {
+                        // 无结果
+                        searchInfo.textContent = `未找到与 "${searchKeyword}" 相关的内容`;
+                        noResults.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('搜索失败:', error);
+                    loading.style.display = 'none';
+                    errorDiv.style.display = 'block';
+                    errorText.textContent = '搜索失败，请稍后重试';
+                    searchInfo.textContent = '搜索出错';
+                }
+            }
+            
+            // 重试按钮
+            if (retryBtn) {
+                retryBtn.addEventListener('click', () => {
+                    performSearch(keyword);
+                });
+            }
+            
+            // 搜索表单提交
+            if (searchForm) {
+                searchForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const newKeyword = searchKeywordInput.value.trim();
+                    if (newKeyword) {
+                        // 更新 URL 并重新搜索
+                        window.history.pushState({}, '', `./search.html?q=${encodeURIComponent(newKeyword)}`);
+                        performSearch(newKeyword);
+                    } else {
+                        // 空搜索提示
+                        searchKeywordInput.classList.add('shake');
+                        setTimeout(() => {
+                            searchKeywordInput.classList.remove('shake');
+                        }, 500);
+                    }
+                });
+            }
+            
+            // 初始搜索
+            if (keyword) {
+                performSearch(keyword);
+            } else {
+                searchInfo.textContent = '请输入搜索关键词';
+                loading.style.display = 'none';
+            }
+        })();
+    </script>
+</body>
+</html>

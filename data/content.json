@@ -1,0 +1,517 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2024-01-26T12:00:00Z",
+  "content": [
+    {
+      "id": "book-001",
+      "type": "books",
+      "title": "三字经",
+      "description": "中国传统启蒙教育的经典读物",
+      "detailedDescription": "《三字经》是中国传统启蒙教材，以三字一句的韵文形式，讲述了中国传统文化的基础知识，包括常识、历史、人物、道德等内容。全文朗朗上口，易于记忆，是儿童学习中华传统文化的入门读物。内容涵盖教育、历史、天文、地理、伦理道德等，体现了中国古代教育的智慧。",
+      "cover": "https://via.placeholder.com/300x450/8BC34A/FFFFFF?text=三字经",
+      "ageRating": "6+",
+      "metadata": {
+        "author": "王应麟（传）",
+        "publisher": "中华书局",
+        "publishDate": "2023-01-15",
+        "language": "中文"
+      },
+      "links": {
+        "read": "./books/three-character-classic.html"
+      },
+      "tags": ["国学", "启蒙", "传统文化", "经典"],
+      "featured": true,
+      "createdAt": "2024-01-26T00:00:00Z",
+      "updatedAt": "2024-01-26T00:00:00Z"
+    },
+    {
+      "id": "book-002",
+      "type": "books",
+      "title": "百家姓",
+      "description": "中国姓氏文化的启蒙读物",
+      "detailedDescription": "《百家姓》是中国传统蒙学三大读物之一，收录了常见的中国姓氏。采用四字一句的韵文形式，便于诵读和记忆。通过学习《百家姓》，儿童不仅能认识汉字，还能了解中国的姓氏文化和家族传统。书中包含了数百个姓氏，反映了中国姓氏的多样性和深厚的历史文化底蕴。",
+      "cover": "https://via.placeholder.com/300x450/FFC107/FFFFFF?text=百家姓",
+      "ageRating": "6+",
+      "metadata": {
+        "author": "佚名",
+        "publisher": "中华书局",
+        "publishDate": "2023-01-15",
+        "language": "中文"
+      },
+      "links": {
+        "read": "./books/hundred-family-surnames.html"
+      },
+      "tags": ["国学", "启蒙", "姓氏文化", "传统"],
+      "featured": true,
+      "createdAt": "2024-01-26T00:00:00Z",
+      "updatedAt": "2024-01-26T00:00:00Z"
+    },
+    {
+      "id": "book-003",
+      "type": "books",
+      "title": "千字文",
+      "description": "一千个不重复汉字组成的韵文",
+      "detailedDescription": "《千字文》是南北朝时期梁武帝命周兴嗣编撰的韵文，全文由一千个不重复的汉字组成，四字一句，对仗工整，条理清晰。内容涵盖天文、地理、自然、社会、历史等多方面知识，是中国传统文化教育的重要教材。通过学习《千字文》，儿童可以认识常用汉字，了解传统文化，培养文学素养。",
+      "cover": "https://via.placeholder.com/300x450/00BCD4/FFFFFF?text=千字文",
+      "ageRating": "6+",
+      "metadata": {
+        "author": "周兴嗣",
+        "publisher": "中华书局",
+        "publishDate": "2023-01-15",
+        "language": "中文"
+      },
+      "links": {
+        "read": "./books/thousand-character-classic.html"
+      },
+      "tags": ["国学", "启蒙", "识字", "传统文化"],
+      "featured": true,
+      "createdAt": "2024-01-26T00:00:00Z",
+      "updatedAt": "2024-01-26T12:00:00Z"
+    },
+    {
+      "id": "documentary-001",
+      "type": "documentaries",
+      "title": "地球脉动",
+      "description": "探索地球上最壮观的自然景观和野生动物",
+      "detailedDescription": "《地球脉动》是BBC制作的自然纪录片系列，使用革命性的超高清摄影技术，展现了地球上最壮观的自然景观和野生动物。从热带雨林到冰冻极地，从深海到高山，带领观众领略大自然的神奇魅力。",
+      "cover": "https://via.placeholder.com/300x450/4CAF50/FFFFFF?text=地球脉动",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "大卫·爱登堡",
+        "duration": "50分钟/集",
+        "episodes": 11,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/planet-earth"
+      },
+      "tags": ["自然", "动物", "科普"],
+      "featured": true,
+      "createdAt": "2024-01-02T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "documentary-002",
+      "type": "documentaries",
+      "title": "蓝色星球",
+      "description": "深入探索海洋世界的奥秘",
+      "detailedDescription": "《蓝色星球》是BBC制作的海洋主题纪录片，展现了从海岸到深海的各种海洋生态系统。通过先进的水下摄影技术，记录了许多从未被拍摄过的海洋生物和现象，揭示了海洋世界的神秘与壮美。",
+      "cover": "https://via.placeholder.com/300x450/2196F3/FFFFFF?text=蓝色星球",
+      "ageRating": "9+",
+      "metadata": {
+        "director": "大卫·爱登堡",
+        "duration": "50分钟/集",
+        "episodes": 8,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/blue-planet"
+      },
+      "tags": ["海洋", "自然", "科普"],
+      "featured": true,
+      "createdAt": "2024-01-10T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "documentary-003",
+      "type": "documentaries",
+      "title": "航拍中国",
+      "description": "从空中俯瞰祖国的壮美河山",
+      "detailedDescription": "《航拍中国》是一部大型航拍纪录片，以空中视角展示中国的自然地理风貌、人文景观和历史文化。通过高清航拍技术，呈现了中国各地的独特魅力，让观众从全新角度认识祖国的美丽。",
+      "cover": "https://via.placeholder.com/300x450/F44336/FFFFFF?text=航拍中国",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "余乐",
+        "duration": "50分钟/集",
+        "episodes": 34,
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/aerial-china"
+      },
+      "tags": ["地理", "文化", "中国"],
+      "featured": false,
+      "createdAt": "2024-01-11T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "documentary-004",
+      "type": "documentaries",
+      "title": "人类星球",
+      "description": "探索人类在不同环境中的生存智慧",
+      "detailedDescription": "《人类星球》是BBC制作的人文纪录片，展现了世界各地人类在极端环境中的生存方式和文化传统。从沙漠到雨林，从高山到海洋，记录了人类适应自然、与自然和谐共处的智慧。",
+      "cover": "https://via.placeholder.com/300x450/FF9800/FFFFFF?text=人类星球",
+      "ageRating": "12+",
+      "metadata": {
+        "director": "汤姆·休·琼斯",
+        "duration": "60分钟/集",
+        "episodes": 8,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/human-planet"
+      },
+      "tags": ["人文", "文化", "生存"],
+      "featured": false,
+      "createdAt": "2024-01-12T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "documentary-005",
+      "type": "documentaries",
+      "title": "宇宙时空之旅",
+      "description": "探索宇宙的起源和演化",
+      "detailedDescription": "《宇宙时空之旅》是一部科普纪录片，由天体物理学家尼尔·德格拉斯·泰森主持。通过精美的视觉效果和通俗易懂的讲解，带领观众探索宇宙的奥秘，从大爆炸到黑洞，从恒星演化到生命起源。",
+      "cover": "https://via.placeholder.com/300x450/673AB7/FFFFFF?text=宇宙时空",
+      "ageRating": "15+",
+      "metadata": {
+        "director": "安·德鲁扬",
+        "duration": "45分钟/集",
+        "episodes": 13,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/cosmos"
+      },
+      "tags": ["宇宙", "科学", "物理"],
+      "featured": false,
+      "createdAt": "2024-01-13T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "movie-001",
+      "type": "movies",
+      "title": "寻梦环游记",
+      "description": "一个关于家庭、梦想和记忆的动人故事",
+      "detailedDescription": "《寻梦环游记》是皮克斯动画工作室制作的动画电影。讲述了热爱音乐的小男孩米格尔和落魄乐手埃克托在五彩斑斓的亡灵世界开启了一段奇妙冒险旅程的故事。影片探讨了家庭、梦想、记忆等主题，传递了温暖的情感。",
+      "cover": "https://via.placeholder.com/300x450/FF5722/FFFFFF?text=寻梦环游记",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "李·昂克里奇",
+        "cast": ["安东尼·冈萨雷斯", "盖尔·加西亚·贝纳尔"],
+        "duration": "105分钟",
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/coco"
+      },
+      "tags": ["动画", "家庭", "音乐"],
+      "featured": true,
+      "createdAt": "2024-01-03T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "movie-002",
+      "type": "movies",
+      "title": "疯狂动物城",
+      "description": "一只兔子警官和狐狸搭档的破案冒险",
+      "detailedDescription": "《疯狂动物城》是迪士尼制作的动画电影，讲述了兔子警官朱迪和狐狸尼克联手破获一起神秘案件的故事。影片以动物城为背景，探讨了偏见、梦想、友谊等主题，传递了积极向上的价值观。",
+      "cover": "https://via.placeholder.com/300x450/4CAF50/FFFFFF?text=疯狂动物城",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "拜伦·霍华德",
+        "cast": ["金妮弗·古德温", "杰森·贝特曼"],
+        "duration": "109分钟",
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/zootopia"
+      },
+      "tags": ["动画", "冒险", "励志"],
+      "featured": true,
+      "createdAt": "2024-01-14T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "movie-003",
+      "type": "movies",
+      "title": "千与千寻",
+      "description": "一个小女孩在神秘世界的奇幻冒险",
+      "detailedDescription": "《千与千寻》是宫崎骏执导的动画电影，讲述了10岁的千寻误入神灵世界，为了拯救父母而努力工作的故事。影片充满了想象力和东方文化元素，探讨了成长、勇气、环保等主题。",
+      "cover": "https://via.placeholder.com/300x450/009688/FFFFFF?text=千与千寻",
+      "ageRating": "9+",
+      "metadata": {
+        "director": "宫崎骏",
+        "cast": ["柊瑠美", "入野自由"],
+        "duration": "125分钟",
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/spirited-away"
+      },
+      "tags": ["动画", "奇幻", "成长"],
+      "featured": true,
+      "createdAt": "2024-01-15T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "movie-004",
+      "type": "movies",
+      "title": "流浪地球",
+      "description": "人类带着地球逃离太阳系的科幻史诗",
+      "detailedDescription": "《流浪地球》是根据刘慈欣同名小说改编的科幻电影。讲述了太阳即将毁灭，人类开启流浪地球计划，推动地球离开太阳系寻找新家园的故事。影片展现了中国科幻电影的新高度。",
+      "cover": "https://via.placeholder.com/300x450/607D8B/FFFFFF?text=流浪地球",
+      "ageRating": "12+",
+      "metadata": {
+        "director": "郭帆",
+        "cast": ["屈楚萧", "吴京", "李光洁"],
+        "duration": "125分钟",
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/wandering-earth"
+      },
+      "tags": ["科幻", "灾难", "冒险"],
+      "featured": false,
+      "createdAt": "2024-01-16T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "movie-005",
+      "type": "movies",
+      "title": "少年的你",
+      "description": "两个少年在困境中相互守护的故事",
+      "detailedDescription": "《少年的你》是一部关注校园霸凌问题的青春片。讲述了高考前夕，性格内向的优等生陈念遭遇校园霸凌，与小混混小北建立了特殊的友谊，两人在困境中相互守护的故事。影片真实反映了青少年成长中的问题。",
+      "cover": "https://via.placeholder.com/300x450/3F51B5/FFFFFF?text=少年的你",
+      "ageRating": "15+",
+      "metadata": {
+        "director": "曾国祥",
+        "cast": ["周冬雨", "易烊千玺"],
+        "duration": "135分钟",
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/better-days"
+      },
+      "tags": ["青春", "现实", "成长"],
+      "featured": false,
+      "createdAt": "2024-01-17T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "tv-series-001",
+      "type": "tv-series",
+      "title": "神奇校车",
+      "description": "跟随卷毛老师和同学们开启奇妙的科学探险",
+      "detailedDescription": "《神奇校车》是一部寓教于乐的科普动画片，讲述了卷毛老师带领学生们乘坐神奇校车，进行各种不可思议的科学探险。每一集都围绕一个科学主题展开，用生动有趣的方式向孩子们传授科学知识。",
+      "cover": "https://via.placeholder.com/300x450/FFC107/FFFFFF?text=神奇校车",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "拉里·雅各布斯",
+        "cast": ["莉莉·汤姆林"],
+        "duration": "25分钟/集",
+        "episodes": 52,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/magic-school-bus"
+      },
+      "tags": ["科普", "教育", "动画"],
+      "featured": false,
+      "createdAt": "2024-01-04T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "tv-series-002",
+      "type": "tv-series",
+      "title": "大侦探福尔摩斯",
+      "description": "经典侦探故事的精彩演绎",
+      "detailedDescription": "《大侦探福尔摩斯》改编自柯南·道尔的经典侦探小说，讲述了福尔摩斯和华生医生在维多利亚时代的伦敦破获各种离奇案件的故事。剧集保留了原著的精髓，展现了福尔摩斯超凡的推理能力。",
+      "cover": "https://via.placeholder.com/300x450/795548/FFFFFF?text=福尔摩斯",
+      "ageRating": "9+",
+      "metadata": {
+        "director": "保罗·麦圭根",
+        "cast": ["本尼迪克特·康伯巴奇", "马丁·弗瑞曼"],
+        "duration": "90分钟/集",
+        "episodes": 13,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/sherlock"
+      },
+      "tags": ["推理", "悬疑", "经典"],
+      "featured": true,
+      "createdAt": "2024-01-18T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "tv-series-003",
+      "type": "tv-series",
+      "title": "觉醒年代",
+      "description": "再现新文化运动和建党历程的史诗巨制",
+      "detailedDescription": "《觉醒年代》是一部重大革命历史题材电视剧，展现了从新文化运动到中国共产党建立的历史画卷。通过陈独秀、李大钊等先驱人物的故事，再现了那个风云激荡的年代，展示了青年人的理想与追求。",
+      "cover": "https://via.placeholder.com/300x450/D32F2F/FFFFFF?text=觉醒年代",
+      "ageRating": "12+",
+      "metadata": {
+        "director": "张永新",
+        "cast": ["于和伟", "张桐", "张晚意"],
+        "duration": "45分钟/集",
+        "episodes": 43,
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/the-age-of-awakening"
+      },
+      "tags": ["历史", "革命", "青春"],
+      "featured": true,
+      "createdAt": "2024-01-19T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "tv-series-004",
+      "type": "tv-series",
+      "title": "隐秘的角落",
+      "description": "三个孩子目睹谋杀案后的惊险故事",
+      "detailedDescription": "《隐秘的角落》改编自紫金陈的推理小说《坏小孩》，讲述了三个孩子在爬山时无意拍摄到一次谋杀，由此展开的一系列惊险故事。剧集探讨了人性、家庭、成长等深刻主题，制作精良。",
+      "cover": "https://via.placeholder.com/300x450/455A64/FFFFFF?text=隐秘的角落",
+      "ageRating": "15+",
+      "metadata": {
+        "director": "辛爽",
+        "cast": ["秦昊", "王景春", "荣梓杉"],
+        "duration": "50分钟/集",
+        "episodes": 12,
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/the-bad-kids"
+      },
+      "tags": ["悬疑", "推理", "人性"],
+      "featured": false,
+      "createdAt": "2024-01-20T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "tv-series-005",
+      "type": "tv-series",
+      "title": "小舍得",
+      "description": "聚焦教育焦虑的现实题材剧",
+      "detailedDescription": "《小舍得》是一部关注教育问题的现实题材电视剧，讲述了几个家庭在孩子教育问题上的焦虑、矛盾和成长。剧集真实反映了当代家庭面临的教育压力，引发了广泛的社会讨论。",
+      "cover": "https://via.placeholder.com/300x450/00BCD4/FFFFFF?text=小舍得",
+      "ageRating": "12+",
+      "metadata": {
+        "director": "张晓波",
+        "cast": ["宋佳", "佟大为", "蒋欣"],
+        "duration": "45分钟/集",
+        "episodes": 40,
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/a-love-for-dilemma"
+      },
+      "tags": ["现实", "教育", "家庭"],
+      "featured": false,
+      "createdAt": "2024-01-21T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "kids-001",
+      "type": "kids",
+      "title": "小猪佩奇",
+      "description": "佩奇和家人朋友们的日常生活趣事",
+      "detailedDescription": "《小猪佩奇》是一部英国学前电视动画片，讲述了小猪佩奇与家人和朋友们的日常生活故事。动画以幽默的方式展现了孩子们的成长经历，传递了家庭、友谊、勇气等正面价值观。",
+      "cover": "https://via.placeholder.com/300x450/E91E63/FFFFFF?text=小猪佩奇",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "马克·贝克",
+        "duration": "5分钟/集",
+        "episodes": 300,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/peppa-pig"
+      },
+      "tags": ["幼儿", "动画", "家庭"],
+      "featured": false,
+      "createdAt": "2024-01-05T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "kids-002",
+      "type": "kids",
+      "title": "汪汪队立大功",
+      "description": "勇敢的狗狗救援队的冒险故事",
+      "detailedDescription": "《汪汪队立大功》是一部加拿大儿童动画片，讲述了男孩莱德带领的一支狗狗救援队，在冒险湾执行各种救援任务的故事。每只狗狗都有自己的特长和装备，通过团队合作解决问题。",
+      "cover": "https://via.placeholder.com/300x450/2196F3/FFFFFF?text=汪汪队",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "杰米·惠特尼",
+        "duration": "23分钟/集",
+        "episodes": 200,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/paw-patrol"
+      },
+      "tags": ["冒险", "团队", "动画"],
+      "featured": true,
+      "createdAt": "2024-01-22T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "kids-003",
+      "type": "kids",
+      "title": "超级飞侠",
+      "description": "飞机机器人环游世界送包裹的故事",
+      "detailedDescription": "《超级飞侠》是一部中韩合作的儿童动画片，讲述了飞机机器人乐迪和他的伙伴们环游世界，为小朋友递送包裹，并帮助他们解决困难的故事。动画融入了世界各地的风土人情和文化知识。",
+      "cover": "https://via.placeholder.com/300x450/FF5722/FFFFFF?text=超级飞侠",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "李东白",
+        "duration": "12分钟/集",
+        "episodes": 150,
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/super-wings"
+      },
+      "tags": ["冒险", "文化", "动画"],
+      "featured": true,
+      "createdAt": "2024-01-23T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "kids-004",
+      "type": "kids",
+      "title": "海底小纵队",
+      "description": "探索海洋保护海洋生物的冒险队",
+      "detailedDescription": "《海底小纵队》是一部英国儿童动画片，讲述了以巴克队长为领导核心的海底小纵队，在神秘的海底世界探险，保护海洋生物的故事。动画寓教于乐，传递了环保和团队合作的理念。",
+      "cover": "https://via.placeholder.com/300x450/00BCD4/FFFFFF?text=海底小纵队",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "维基·沃恩",
+        "duration": "11分钟/集",
+        "episodes": 140,
+        "language": "中文配音"
+      },
+      "links": {
+        "watch": "https://example.com/watch/octonauts"
+      },
+      "tags": ["海洋", "环保", "动画"],
+      "featured": false,
+      "createdAt": "2024-01-24T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    },
+    {
+      "id": "kids-005",
+      "type": "kids",
+      "title": "大耳朵图图",
+      "description": "调皮可爱的图图和他的成长故事",
+      "detailedDescription": "《大耳朵图图》是一部中国原创儿童动画片，讲述了三岁小男孩胡图图和他的家人、朋友们的日常生活故事。动画以幽默诙谐的方式展现了孩子的天真烂漫和成长烦恼，深受中国家庭喜爱。",
+      "cover": "https://via.placeholder.com/300x450/FF9800/FFFFFF?text=大耳朵图图",
+      "ageRating": "6+",
+      "metadata": {
+        "director": "速达",
+        "duration": "12分钟/集",
+        "episodes": 130,
+        "language": "中文"
+      },
+      "links": {
+        "watch": "https://example.com/watch/tutu"
+      },
+      "tags": ["幼儿", "成长", "动画"],
+      "featured": false,
+      "createdAt": "2024-01-25T00:00:00Z",
+      "updatedAt": "2024-01-20T12:00:00Z"
+    }
+  ]
+}
