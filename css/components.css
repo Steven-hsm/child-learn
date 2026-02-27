@@ -249,7 +249,7 @@
 .card-image {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 宽高比 */
+  padding-top: 133.33%; /* 3:4 宽高比（书籍比例） */
   background-color: var(--bg-secondary);
   overflow: hidden;
 }

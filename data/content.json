@@ -8,7 +8,7 @@
       "title": "三字经",
       "description": "中国传统启蒙教育的经典读物",
       "detailedDescription": "《三字经》是中国传统启蒙教材，以三字一句的韵文形式，讲述了中国传统文化的基础知识，包括常识、历史、人物、道德等内容。全文朗朗上口，易于记忆，是儿童学习中华传统文化的入门读物。内容涵盖教育、历史、天文、地理、伦理道德等，体现了中国古代教育的智慧。",
-      "cover": "https://via.placeholder.com/300x450/8BC34A/FFFFFF?text=三字经",
+      "cover": "./images/covers/三字经-封面图.jpeg",
       "ageRating": "6+",
       "metadata": {
         "author": "王应麟（传）",
@@ -30,7 +30,7 @@
       "title": "百家姓",
       "description": "中国姓氏文化的启蒙读物",
       "detailedDescription": "《百家姓》是中国传统蒙学三大读物之一，收录了常见的中国姓氏。采用四字一句的韵文形式，便于诵读和记忆。通过学习《百家姓》，儿童不仅能认识汉字，还能了解中国的姓氏文化和家族传统。书中包含了数百个姓氏，反映了中国姓氏的多样性和深厚的历史文化底蕴。",
-      "cover": "https://via.placeholder.com/300x450/FFC107/FFFFFF?text=百家姓",
+      "cover": "./images/covers/百家姓-封面图.jpeg",
       "ageRating": "6+",
       "metadata": {
         "author": "佚名",
@@ -52,7 +52,7 @@
       "title": "千字文",
       "description": "一千个不重复汉字组成的韵文",
       "detailedDescription": "《千字文》是南北朝时期梁武帝命周兴嗣编撰的韵文，全文由一千个不重复的汉字组成，四字一句，对仗工整，条理清晰。内容涵盖天文、地理、自然、社会、历史等多方面知识，是中国传统文化教育的重要教材。通过学习《千字文》，儿童可以认识常用汉字，了解传统文化，培养文学素养。",
-      "cover": "https://via.placeholder.com/300x450/00BCD4/FFFFFF?text=千字文",
+      "cover": "./images/covers/千字文-封面图.jpeg",
       "ageRating": "6+",
       "metadata": {
         "author": "周兴嗣",
