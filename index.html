@@ -21,7 +21,16 @@
             <div class="nav-container">
                 <a href="./" class="logo" aria-label="青少年阅读平台首页">青少年阅读平台</a>
                 
-                <ul class="nav-menu" role="menubar" aria-label="内容分类菜单">
+                <button
+                    class="nav-toggle"
+                    id="navToggle"
+                    aria-label="切换导航菜单"
+                    aria-expanded="false"
+                    aria-controls="navMenu">
+                    <span class="nav-toggle-icon"></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu" role="menubar" aria-label="内容分类菜单">
                     <li role="none">
                         <a href="./category.html?type=books" role="menuitem" aria-label="浏览书籍分类">📚 书籍</a>
                     </li>
@@ -146,7 +155,10 @@
                 
                 // 初始化搜索框交互
                 initSearchBox();
-                
+
+                // 初始化移动端导航菜单
+                initMobileNav();
+
                 // 初始化图片懒加载
                 if (typeof lazyLoadImages === 'function') {
                     lazyLoadImages(document.body);
@@ -218,6 +230,41 @@
             }
         }
         
+        // 初始化移动端导航菜单
+        function initMobileNav() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            if (!navToggle || !navMenu) return;
+
+            // 切换菜单
+            navToggle.addEventListener('click', function() {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('nav-menu-open');
+                document.body.classList.toggle('nav-open'); // 防止背景滚动
+            });
+
+            // 点击菜单项后关闭菜单
+            const menuLinks = navMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('nav-menu-open');
+                    document.body.classList.remove('nav-open');
+                });
+            });
+
+            // 点击外部关闭菜单
+            document.addEventListener('click', function(e) {
+                if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('nav-menu-open');
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        }
+
         // 初始化搜索框交互
         function initSearchBox() {
             const searchForm = document.querySelector('.search-box form');
