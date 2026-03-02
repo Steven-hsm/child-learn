@@ -1,0 +1,178 @@
+/**
+ * 书籍阅读页面统一样式
+ * 用于所有国学经典书籍的展示
+ */
+
+/* ====================
+   书籍内容容器
+   ==================== */
+.book-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f5f3e8;           /* 米黄色纸张背景 */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================
+   书名样式
+   ==================== */
+.book-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* ====================
+   正文样式
+   ==================== */
+.book-text {
+    line-height: 2.5;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.book-text p {
+    margin-bottom: 1rem;
+}
+
+/* ====================
+   章节标题样式
+   ==================== */
+.section-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* 诗歌标题样式（神童诗等使用） */
+.poem-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+/* ====================
+   返回按钮样式
+   ==================== */
+.back-button {
+    display: inline-block;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.back-button:hover {
+    opacity: 0.9;
+}
+
+/* ====================
+   拼音标注样式
+   ==================== */
+ruby {
+    ruby-position: over;
+}
+
+rt {
+    font-size: 0.5em;
+    color: #666;
+}
+
+/* ====================
+   分页控件样式
+   ==================== */
+.pagination {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.pagination button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination .page-info {
+    display: inline-block;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+/* ====================
+   分页内容样式
+   ==================== */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ====================
+   响应式设计
+   ==================== */
+@media (max-width: 768px) {
+    .book-content {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .book-title {
+        font-size: 1.5rem;
+    }
+
+    .book-text {
+        font-size: 1rem;
+        line-height: 2;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    .pagination button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-content {
+        margin: 0.5rem;
+        padding: 0.75rem;
+    }
+
+    .book-text {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    ruby rt {
+        font-size: 0.45em;
+    }
+}
